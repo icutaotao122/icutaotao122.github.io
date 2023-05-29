@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">今日事，今日毕</title>
     <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2023-05-29T13:53:38&#43;08:00</updated>
+    <updated>2023-05-29T14:06:37&#43;08:00</updated>
     <id>https://icutaotao122.github.io/</id>
     <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://icutaotao122.github.io/atom.xml" />
@@ -2451,7 +2451,7 @@
             <title type="text">&lt;金字塔原理&gt;的正确打开方式——(2)</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/forty-four/" />
             <id>https://icutaotao122.github.io/posts/forty-four/</id>
-            <updated>2023-05-29T13:53:31&#43;08:00</updated>
+            <updated>2023-05-29T14:01:45&#43;08:00</updated>
             <published>2020-04-08T12:49:16&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -2549,7 +2549,7 @@
 &lt;p&gt;&lt;img src=&#34;https://icutaotao122.github.io/img/j42.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;当我们进行演绎推理时，推理过程的第二个思想必须是对第一个思想的主语或谓语的评述。归纳过程中，通常需要保持主语不变，改变谓语；或者保持谓语不变、改变主语。&lt;/p&gt;
 &lt;p&gt;演绎推理是根据&lt;strong&gt;规则--情况得到结果&lt;/strong&gt;，归纳推理是根据&lt;strong&gt;情况--结果总结出规则&lt;/strong&gt;。演绎推理不给出答案，鼓励发散、创造和想象，自己寻找答案，所以演绎推理在表达上更具有说服力，但是不利于记忆和传播。归纳推理能快速得出结论，容易记忆和传播，所以归纳推理在表达上更加清晰，但是扼杀了创造力，想象力和发散。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://icutaotao122.github.io/ing/j43.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://icutaotao122.github.io/img/j43.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;MECE原则&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;MECE原则&lt;/strong&gt;是能让人思路清晰、思维缜密的原则。各部分之间&lt;strong&gt;相互独立，相互排斥，没有重叠&lt;/strong&gt;。（Mutually Exclusive ）所有部分&lt;strong&gt;完全穷尽，没有遗漏&lt;/strong&gt;。（Collectively Exhaustive）。横向组织思想归类分组时必须遵循这一原则，&lt;strong&gt;先分清再穷尽&lt;/strong&gt;，这样才能确保结构的正确。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://icutaotao122.github.io/img/j13.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
