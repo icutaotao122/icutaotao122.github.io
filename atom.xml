@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">今日事，今日毕</title>
     <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2023-05-31T00:56:04&#43;08:00</updated>
+    <updated>2023-05-31T01:12:13&#43;08:00</updated>
     <id>https://icutaotao122.github.io/</id>
     <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://icutaotao122.github.io/atom.xml" />
@@ -66,7 +66,7 @@
             <title type="text">不经批判的世界，不值一信——&lt;学会提问&gt;</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/eighty-two/" />
             <id>https://icutaotao122.github.io/posts/eighty-two/</id>
-            <updated>2023-05-31T00:55:54&#43;08:00</updated>
+            <updated>2023-05-31T01:12:07&#43;08:00</updated>
             <published>2023-04-26T23:38:10&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -509,9 +509,9 @@
 &lt;li&gt;例：&lt;/li&gt;
 &lt;li&gt;我们支持房产税，因为民意调查（被调查的对象未必是我们）一致赞成征收房产税&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;诉诸公众谬误&lt;/strong&gt;
-*定义：试图通过引用多数人一致赞成的观点来证明某个观点的合理性，错误地认为多数人支持的就是合理的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;诉诸公众谬误&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;定义：试图通过引用多数人一致赞成的观点来证明某个观点的合理性，错误地认为多数人支持的就是合理的。&lt;/li&gt;
 &lt;li&gt;例：&lt;/li&gt;
 &lt;li&gt;人贩子都应该被判死刑&lt;/li&gt;
 &lt;/ul&gt;
@@ -712,7 +712,7 @@
 &lt;p&gt;&lt;strong&gt;所谓替代原因，就是言之成理的替代解释，它能够说明为什么特定的结果会发生&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;人们常犯的错误就是认为导致事情发生的原因只有一个，而事实上事情的发生通常是由多种原因共同造成的。——人们倾向于将他们所偏好的那个原因当成唯一的解释。&lt;/p&gt;
 &lt;p&gt;替代性原因越多，某个具体替代性原因的可信度就越轻，它可能只是造成结论的一个“促成因素”，而不是决定性因素。&lt;/p&gt;
-&lt;p&gt;**替代性原因的指示词：导致、影响了、与……有关、阻止了、增加了……的可能性；、决定了……、与……有联系、有……**的效果等等。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;替代性原因的指示词&lt;/strong&gt;：导致、影响了、与……有关、阻止了、增加了……的可能性；、决定了……、与……有联系、有……的效果等等。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;如何寻找替代性原因&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;1.我能不能想出其它方法来解释这个论据？&lt;/li&gt;
