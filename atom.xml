@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">今日事，今日毕</title>
     <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2023-06-06T15:15:27&#43;08:00</updated>
+    <updated>2023-06-06T15:37:06&#43;08:00</updated>
     <id>https://icutaotao122.github.io/</id>
     <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://icutaotao122.github.io/atom.xml" />
@@ -3926,6 +3926,45 @@
         </entry>
     
         <entry>
+            <title type="text">读书能打破空间吗？</title>
+            <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/read50/" />
+            <id>https://icutaotao122.github.io/posts/read50/</id>
+            <updated>2023-06-06T15:36:59&#43;08:00</updated>
+            <published>2022-07-31T14:23:45&#43;08:00</published>
+            <author>
+                    <name>书书福福悦读</name>
+                    <uri>https://tomhutao.netlify.app/</uri>
+                    <email>https://tomhutao.icu/</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">读书是打破维度的最简单方法。人是生活在三维空间中，如果在维度上加上时间，三维空间就上升为四维空间。但人的生命有限，因此很难跨越三维空间看到四维空间。 单个的文字属于一维空间，而写成一句话的文字呈现在纸上……</summary>
+            
+                <content type="html">&lt;p&gt;读书是打破维度的最简单方法。人是生活在三维空间中，如果在维度上加上时间，三维空间就上升为四维空间。但人的生命有限，因此很难跨越三维空间看到四维空间。&lt;/p&gt;
+&lt;p&gt;单个的文字属于一维空间，而写成一句话的文字呈现在纸上就进入到二维空间，二维上升到三维必须能被形象化。如果把文字写成文章，就赋予了思想，思想进入受众的大脑就可以被形象化，那么二维的文章就上升到三维空间。&lt;/p&gt;
+&lt;p&gt;书籍可以千百年流传，它不受时间影响。因此，在书籍上加入时间这一因素，文字就进入到四维空间。&lt;/p&gt;
+&lt;p&gt;从一维到二维到三维再到四维，从点到线到面到体再到时空。也许思想就是四维空间的产物。&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://icutaotao122.github.io/categories/%E8%AF%BB%E4%B9%A6/" term="读书" label="读书" />
+                            
+                        
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">&lt;金字塔原理&gt;的那些问题（2）</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/sixty-eight/" />
             <id>https://icutaotao122.github.io/posts/sixty-eight/</id>
@@ -5969,7 +6008,7 @@
             <title type="text">适度的紧张有利于学习:控制紧张(四)</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/read36/" />
             <id>https://icutaotao122.github.io/posts/read36/</id>
-            <updated>2023-06-06T13:50:22&#43;08:00</updated>
+            <updated>2023-06-06T15:30:54&#43;08:00</updated>
             <published>2022-06-06T13:46:28&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -6024,6 +6063,14 @@
             
             
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://icutaotao122.github.io/categories/%E8%AF%BB%E4%B9%A6/" term="读书" label="读书" />
+                            
+                        
                     
                 
                     
@@ -6108,7 +6155,7 @@
             <title type="text">适度的紧张有利于学习:控制紧张(三)</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/read35/" />
             <id>https://icutaotao122.github.io/posts/read35/</id>
-            <updated>2023-06-06T13:46:17&#43;08:00</updated>
+            <updated>2023-06-06T15:31:02&#43;08:00</updated>
             <published>2022-06-04T13:43:37&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -6155,6 +6202,14 @@
             
             
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://icutaotao122.github.io/categories/%E8%AF%BB%E4%B9%A6/" term="读书" label="读书" />
+                            
+                        
                     
                 
                     
@@ -6350,7 +6405,7 @@
             <title type="text">读书习惯的养成</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/read38/" />
             <id>https://icutaotao122.github.io/posts/read38/</id>
-            <updated>2023-06-06T13:54:47&#43;08:00</updated>
+            <updated>2023-06-06T15:30:21&#43;08:00</updated>
             <published>2022-06-02T13:53:29&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -6372,6 +6427,14 @@
             
             
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://icutaotao122.github.io/categories/%E8%AF%BB%E4%B9%A6/" term="读书" label="读书" />
+                            
+                        
                     
                 
                     
@@ -6902,7 +6965,7 @@
             <title type="text">读书的姿势很重要</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/read28/" />
             <id>https://icutaotao122.github.io/posts/read28/</id>
-            <updated>2023-06-05T13:51:47&#43;08:00</updated>
+            <updated>2023-06-06T15:32:07&#43;08:00</updated>
             <published>2022-05-17T13:50:40&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -6913,7 +6976,7 @@
             
                 <content type="html">&lt;p&gt;读书的习惯非常重要,不同的习惯对读书的效果不同.比方有的人喜欢躺着床上看书,有的人喜欢背靠沙发看书,有的喜欢侧卧着看书,还有些喜欢爬着看书......反正看书的姿势非常的多.&lt;/p&gt;
 &lt;p&gt;个人建议,对于比较重要的书,或者写的非常好的书一定要认真读,这个&amp;quot;认真&amp;quot;首先就是读书的姿势,我们的身体时刻都在和大脑在交流,如果一件事非常重要,身体的行为就会非常重视,会主动对大脑说&amp;quot;这个事情很重要,多给我点注意力&amp;quot;,大脑接收到信息,就会重视起这件事,会分配更多的精力给我们的大脑,帮助集中注意力和记忆力,其次还会分配更多精力给身体,这样整个读书的效率就会得到整体提高.&lt;/p&gt;
-&lt;p&gt;如果躺着床上看书,或者爬着看书,身体这种放松状态会传达给大脑一个信息----这个事情不重要,没必要特别注意,于是我们大脑也就不会去注重这件事,最后书读完了,可能过几天什么都不记得了&lt;/p&gt;
+&lt;p&gt;如果躺着床上看书,或者爬着看书,身体这种放松状态会传达给大脑一个信息----这个事情不重要,没必要特别注意,于是我们大脑也就不会去注重这件事,最后书读完了,可能过几天什么都不记得了.&lt;/p&gt;
 </content>
             
             
