@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://icutaotao122.github.io/posts/hello-world/</loc>
+    <lastmod>2023-06-07T07:51:43+08:00</lastmod>
+  </url><url>
     <loc>https://icutaotao122.github.io/posts/think22/</loc>
     <lastmod>2023-06-07T01:43:55+08:00</lastmod>
   </url><url>
@@ -24,7 +27,7 @@
     <lastmod>2023-05-23T01:06:41+08:00</lastmod>
   </url><url>
     <loc>https://icutaotao122.github.io/</loc>
-    <lastmod>2023-06-07T07:29:09+08:00</lastmod>
+    <lastmod>2023-06-07T07:57:58+08:00</lastmod>
   </url><url>
     <loc>https://icutaotao122.github.io/categories/</loc>
     <lastmod>2023-05-23T00:31:30+08:00</lastmod>
@@ -36,13 +39,10 @@
     <lastmod>2023-05-23T11:23:39+08:00</lastmod>
   </url><url>
     <loc>https://icutaotao122.github.io/posts/</loc>
-    <lastmod>2023-06-07T07:29:09+08:00</lastmod>
-  </url><url>
-    <loc>https://icutaotao122.github.io/posts/hello-world/</loc>
-    <lastmod>2023-05-27T22:00:21+08:00</lastmod>
+    <lastmod>2023-06-07T07:57:58+08:00</lastmod>
   </url><url>
     <loc>https://icutaotao122.github.io/categories/%E5%86%99%E4%BD%9C/</loc>
-    <lastmod>2023-06-04T17:35:01+08:00</lastmod>
+    <lastmod>2023-06-07T07:51:43+08:00</lastmod>
   </url><url>
     <loc>https://icutaotao122.github.io/posts/eighty-two/</loc>
     <lastmod>2023-05-31T01:12:07+08:00</lastmod>
@@ -105,7 +105,7 @@
     <lastmod>2023-06-07T07:29:09+08:00</lastmod>
   </url><url>
     <loc>https://icutaotao122.github.io/categories/%E6%80%9D%E8%80%83/</loc>
-    <lastmod>2023-06-07T07:29:09+08:00</lastmod>
+    <lastmod>2023-06-07T07:57:58+08:00</lastmod>
   </url><url>
     <loc>https://icutaotao122.github.io/posts/think38/</loc>
     <lastmod>2023-06-07T07:16:37+08:00</lastmod>
@@ -201,7 +201,7 @@
     <lastmod>2023-06-06T14:12:50+08:00</lastmod>
   </url><url>
     <loc>https://icutaotao122.github.io/posts/think32/</loc>
-    <lastmod>2023-06-07T06:19:21+08:00</lastmod>
+    <lastmod>2023-06-07T07:53:42+08:00</lastmod>
   </url><url>
     <loc>https://icutaotao122.github.io/posts/read47/</loc>
     <lastmod>2023-06-06T14:18:23+08:00</lastmod>
@@ -330,7 +330,7 @@
     <lastmod>2023-06-06T14:05:30+08:00</lastmod>
   </url><url>
     <loc>https://icutaotao122.github.io/posts/think31/</loc>
-    <lastmod>2023-06-07T06:13:54+08:00</lastmod>
+    <lastmod>2023-06-07T07:54:06+08:00</lastmod>
   </url><url>
     <loc>https://icutaotao122.github.io/posts/read36/</loc>
     <lastmod>2023-06-06T15:30:54+08:00</lastmod>
@@ -601,6 +601,9 @@
   </url><url>
     <loc>https://icutaotao122.github.io/posts/think19/</loc>
     <lastmod>2023-06-07T01:32:32+08:00</lastmod>
+  </url><url>
+    <loc>https://icutaotao122.github.io/posts/think25/</loc>
+    <lastmod>2023-06-07T07:57:58+08:00</lastmod>
   </url><url>
     <loc>https://icutaotao122.github.io/posts/think20/</loc>
     <lastmod>2023-06-07T01:35:51+08:00</lastmod>

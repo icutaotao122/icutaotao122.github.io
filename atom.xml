@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">今日事，今日毕</title>
     <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2023-06-07T07:29:14&#43;08:00</updated>
+    <updated>2023-06-07T07:58:09&#43;08:00</updated>
     <id>https://icutaotao122.github.io/</id>
     <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://icutaotao122.github.io/atom.xml" />
@@ -16,6 +16,52 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.111.3">Hugo</generator>
+        <entry>
+            <title type="text">读书-思考-写作</title>
+            <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/hello-world/" />
+            <id>https://icutaotao122.github.io/posts/hello-world/</id>
+            <updated>2023-06-07T07:51:43&#43;08:00</updated>
+            <published>2023-05-22T22:54:17&#43;08:00</published>
+            <author>
+                    <name>书书福福悦读</name>
+                    <uri>https://tomhutao.netlify.app/</uri>
+                    <email>https://tomhutao.icu/</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">书写是为了更好的思考. 开始是坚持，后来是习惯，接着是喜欢;只有做你最感兴趣的事情，钱会随之而来。 如果一件事情你不能讲清楚，十有八九你还没有完全理解。 如果没有持续学习和思考的习惯，你的日记或博客很快就会……</summary>
+            
+                <content type="html">&lt;h4 id=&#34;书写是为了更好的思考&#34;&gt;书写是为了更好的思考.&lt;/h4&gt;
+&lt;h4 id=&#34;开始是坚持后来是习惯接着是喜欢只有做你最感兴趣的事情钱会随之而来&#34;&gt;开始是坚持，后来是习惯，接着是喜欢;只有做你最感兴趣的事情，钱会随之而来。&lt;/h4&gt;
+&lt;p&gt;如果一件事情你不能讲清楚，十有八九你还没有完全理解。
+如果没有持续学习和思考的习惯，你的日记或博客很快就会没有内容可写，就只能整点碎碎念或者转载......为了打破死循环，不要永久停更自己的日记或博客————一旦停下太久就很难再继续，这是一条帮助自己思考和总结的途径。&lt;/p&gt;
+&lt;p&gt;为了让自己写出的东西有价值，你就必须要不断总结自己学习的结果，不断的思考，总结出比别人更深刻、更独到的见解。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lmg.jj20.com/up/allimg/4k/s/02/2109242204403V2-0-lp.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;很多人在生活中容易觉得迷失，不知道想要做什么，是因为没有一件能够持续地做的事情，简单说就是没有主心骨。用积极心理学的话来说就是没有一件能够创造流体验的事情，而书写自己的思想则是一件容易产生流体验的事情，在书写的时候，特别是理性地书写的时候，大脑逐渐进入理性推理分析模式，一切不愉快的情绪、烦躁感都会逐渐消隐下去。&lt;/p&gt;
+&lt;p&gt;为了让一个不明白的人做到明白，你必须要知道从明白到不明白他究竟需要掌握哪些概念，这就迫使我们对我们大脑中整个的知识体系来个寻根问底，把藏在水面之下的那些东西统统挖出来，把大脑中的那些我们知道、但不知道自己知道的潜在概念或假设都挖出来，把它们从内隐记忆拉扯到外显记忆中。因为只有完全知道、并知道自己知道一切来龙去脉的人，才能真正把一件事情讲得通通透透。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;参考&#34;&gt;参考&lt;/h4&gt;
+&lt;p&gt;1.&lt;a href=&#34;http://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/&#34;&gt;为什么你应该（从现在开始就）写博客&lt;/a&gt;&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://icutaotao122.github.io/categories/%E5%86%99%E4%BD%9C/" term="写作" label="写作" />
+                            
+                        
+                    
+                
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">生命的列车</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/think22/" />
@@ -572,52 +618,6 @@
                             
                             
                                 <category scheme="https://icutaotao122.github.io/categories/%E6%80%9D%E8%80%83/" term="思考" label="思考" />
-                            
-                        
-                    
-                
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">读书-思考-写作</title>
-            <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/hello-world/" />
-            <id>https://icutaotao122.github.io/posts/hello-world/</id>
-            <updated>2023-05-27T22:00:21&#43;08:00</updated>
-            <published>2023-05-22T22:54:17&#43;08:00</published>
-            <author>
-                    <name>书书福福悦读</name>
-                    <uri>https://tomhutao.netlify.app/</uri>
-                    <email>https://tomhutao.icu/</email>
-                    </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">书写是为了更好的思考. 开始是坚持，后来是习惯，接着是喜欢;只有做你最感兴趣的事情，钱会随之而来。 如果一件事情你不能讲清楚，十有八九你还没有完全理解。 如果没有持续学习和思考的习惯，你的日记或博客很快就会……</summary>
-            
-                <content type="html">&lt;h4 id=&#34;书写是为了更好的思考&#34;&gt;书写是为了更好的思考.&lt;/h4&gt;
-&lt;h4 id=&#34;开始是坚持后来是习惯接着是喜欢只有做你最感兴趣的事情钱会随之而来&#34;&gt;开始是坚持，后来是习惯，接着是喜欢;只有做你最感兴趣的事情，钱会随之而来。&lt;/h4&gt;
-&lt;p&gt;如果一件事情你不能讲清楚，十有八九你还没有完全理解。
-如果没有持续学习和思考的习惯，你的日记或博客很快就会没有内容可写，就只能整点碎碎念或者转载......为了打破死循环，不要永久停更自己的日记或博客————一旦停下太久就很难再继续，这是一条帮助自己思考和总结的途径。&lt;/p&gt;
-&lt;p&gt;为了让自己写出的东西有价值，你就必须要不断总结自己学习的结果，不断的思考，总结出比别人更深刻、更独到的见解。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lmg.jj20.com/up/allimg/4k/s/02/2109242204403V2-0-lp.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;很多人在生活中容易觉得迷失，不知道想要做什么，是因为没有一件能够持续地做的事情，简单说就是没有主心骨。用积极心理学的话来说就是没有一件能够创造流体验的事情，而书写自己的思想则是一件容易产生流体验的事情，在书写的时候，特别是理性地书写的时候，大脑逐渐进入理性推理分析模式，一切不愉快的情绪、烦躁感都会逐渐消隐下去。&lt;/p&gt;
-&lt;p&gt;为了让一个不明白的人做到明白，你必须要知道从明白到不明白他究竟需要掌握哪些概念，这就迫使我们对我们大脑中整个的知识体系来个寻根问底，把藏在水面之下的那些东西统统挖出来，把大脑中的那些我们知道、但不知道自己知道的潜在概念或假设都挖出来，把它们从内隐记忆拉扯到外显记忆中。因为只有完全知道、并知道自己知道一切来龙去脉的人，才能真正把一件事情讲得通通透透。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4 id=&#34;参考&#34;&gt;参考&lt;/h4&gt;
-&lt;p&gt;1.&lt;a href=&#34;http://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/&#34;&gt;为什么你应该（从现在开始就）写博客&lt;/a&gt;&lt;/p&gt;
-</content>
-            
-            
-            
-            
-            
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="https://icutaotao122.github.io/categories/%E5%86%99%E4%BD%9C/" term="写作" label="写作" />
                             
                         
                     
@@ -4280,10 +4280,10 @@
         </entry>
     
         <entry>
-            <title type="text">问题的的问题2</title>
+            <title type="text">问题的的问题(2)</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/think32/" />
             <id>https://icutaotao122.github.io/posts/think32/</id>
-            <updated>2023-06-07T06:19:21&#43;08:00</updated>
+            <updated>2023-06-07T07:53:42&#43;08:00</updated>
             <published>2022-09-21T06:14:04&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -7367,10 +7367,10 @@
         </entry>
     
         <entry>
-            <title type="text">关于问题的问题</title>
+            <title type="text">关于问题的问题(1)</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/think31/" />
             <id>https://icutaotao122.github.io/posts/think31/</id>
-            <updated>2023-06-07T06:13:54&#43;08:00</updated>
+            <updated>2023-06-07T07:54:06&#43;08:00</updated>
             <published>2022-06-16T06:10:25&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -12718,6 +12718,49 @@
 &lt;p&gt;中年时，少了些轻狂，多了些隐忍，热血青春的斗志已被消磨殆尽，那颗想要成就一番伟业的心已被掩藏在深处。压力，危机，瓶颈已经取代女人的地位，焦虑是这个年龄摆脱不了的噩梦。半夜惊醒，一身冷汗，黑夜里坐起来，周围是茫然和恐惧。即使在人群中，也可能孤独无比。&lt;/p&gt;
 &lt;p&gt;老年时，生命回归了平静，接受“我很平庸”这个事实，承认自己的渺小和局限，但依旧害怕死亡，养生，下棋，带孙子……是这个年龄最幸福平静的生活方式。&lt;/p&gt;
 &lt;p&gt;人生很短暂也很漫长，每个年龄都有那个年龄段无法回避的问题，它是光荣的，艰苦的，光荣在于平淡，艰苦在于漫长。&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://icutaotao122.github.io/categories/%E6%80%9D%E8%80%83/" term="思考" label="思考" />
+                            
+                        
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">为什么要早起?</title>
+            <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/think25/" />
+            <id>https://icutaotao122.github.io/posts/think25/</id>
+            <updated>2023-06-07T07:57:58&#43;08:00</updated>
+            <published>2021-01-28T01:51:20&#43;08:00</published>
+            <author>
+                    <name>书书福福悦读</name>
+                    <uri>https://tomhutao.netlify.app/</uri>
+                    <email>https://tomhutao.icu/</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">社会很现实,所以你也要学会很现实.一天同样是24小时,别人比你多努力1小时,一个月就是30个小时,一年是就是360小时,你想迎头追上,就要想办法挤出这360个小时,温水煮青蛙,我们都是那只不自知的青蛙……</summary>
+            
+                <content type="html">&lt;p&gt;社会很现实,所以你也要学会很现实.一天同样是24小时,别人比你多努力1小时,一个月就是30个小时,一年是就是360小时,你想迎头追上,就要想办法挤出这360个小时,温水煮青蛙,我们都是那只不自知的青蛙,能明白过来,还有机会跳出去,明白太晚的,可能一辈子就那样了.&lt;/p&gt;
+&lt;p&gt;也许再眯个5分钟,10分钟没什么,但一个5分钟往往注定下一个5分钟,一次10分钟决定可能又一个10分钟,这种无休止的拖延每天都在你身上上演,就像一只开关,开启你一天的生活,但这个开关没有任何意思,你永远会给5分钟找新的理由,现在的你不是你,而是被自己身体给左右,你的自我意识不能控制你的身体,而是身体正在控制你.&lt;/p&gt;
+&lt;p&gt;5分钟,10分钟到底有什么意义了?也许刷刷手机就过去了,再睡5分钟对于改善你的睡眠,提升你的睡眠质量,恢复你的精力起不了多大作用,就像一个饥饿的人,给他一颗糖,这颗糖根本不能解决他的问题,顶多就是带来一丝心理的安慰.5分钟又5分钟,一个5分钟又一个5分钟,等这个5分钟变成30分钟,60分钟,你才发现情况已经有所不同,于是一切都是行事匆匆.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img1.baidu.com/it/u=1908280984,1418715564&amp;amp;fm=253&amp;amp;fmt=auto&amp;amp;app=120&amp;amp;f=JPEG?w=1280&amp;amp;h=800&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;为什么这个时候你能当机立断而在情况刚开始时犹犹豫豫&#34;&gt;为什么这个时候你能当机立断,而在情况刚开始时犹犹豫豫?&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;赖床是一种懒惰,懒惰是一种拖延,拖延是一种意志力薄弱的表现,拖延只会带来麻烦,行动可以帮助你解决麻烦&lt;/strong&gt;.人最大的敌人是自己,用5分钟战胜自己,你将减少30分钟的损失.每天30分钟,一个月就是15个小时,一年就是230小时,你又为自己挤出很多可以利用的时间.&lt;/p&gt;
+&lt;p&gt;大多数竞争就是先人一步,比别人更早获得更多的资源,获得更多的信息,更多的教育,更多的知识,挤出更多的时间......&lt;/p&gt;
+&lt;p&gt;世界是公平的,虽然是相对的公平,但想想那些早上3-4点起床的环卫工人,4-5点已经开始运作早点摊的师傅,6点起床上学的学生,7点拉客的TAXI司机......谁都想放松,安逸,但过度的安逸放松可能是一种毁灭.想要与众不同,就要做出不一样的事.&lt;/p&gt;
 </content>
             
             
