@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">今日事，今日毕</title>
     <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2023-06-07T18:38:48&#43;08:00</updated>
+    <updated>2023-06-07T18:57:59&#43;08:00</updated>
     <id>https://icutaotao122.github.io/</id>
     <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://icutaotao122.github.io/atom.xml" />
@@ -14643,7 +14643,7 @@
             <title type="text">局中局</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/life47/" />
             <id>https://icutaotao122.github.io/posts/life47/</id>
-            <updated>2023-06-07T18:32:47&#43;08:00</updated>
+            <updated>2023-06-07T18:50:25&#43;08:00</updated>
             <published>2020-12-18T18:30:25&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -15953,6 +15953,42 @@
         </entry>
     
         <entry>
+            <title type="text">不好的感觉</title>
+            <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/life19/" />
+            <id>https://icutaotao122.github.io/posts/life19/</id>
+            <updated>2023-06-07T18:57:50&#43;08:00</updated>
+            <published>2020-11-18T17:33:28&#43;08:00</published>
+            <author>
+                    <name>书书福福悦读</name>
+                    <uri>https://tomhutao.netlify.app/</uri>
+                    <email>https://tomhutao.icu/</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">今天出门,发现武汉的管控稍微变严了,不知道这个疫情会不会复发,想年初新冠导致整个武汉人心惶惶,而现在已经快一年,中国百姓的生活基本恢复正常,而观望其他各国,真的是水深火热.有句话说覆巢之下,安有完卵,……</summary>
+            
+                <content type="html">&lt;p&gt;今天出门,发现武汉的管控稍微变严了,不知道这个疫情会不会复发,想年初新冠导致整个武汉人心惶惶,而现在已经快一年,中国百姓的生活基本恢复正常,而观望其他各国,真的是水深火热.有句话说覆巢之下,安有完卵,环顾整个世界,不知道中国是不是真的能幸免,自己总有种不好的感觉,认为新冠还要再次复发.希望自己的这种感觉永远不要发生.&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://icutaotao122.github.io/categories/%E7%94%9F%E6%B4%BB/" term="生活" label="生活" />
+                            
+                        
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">第一次开发游戏</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/life18/" />
             <id>https://icutaotao122.github.io/posts/life18/</id>
@@ -16075,6 +16111,43 @@
             
                 <content type="html">&lt;p&gt;年纪越大,越发现自己的平庸,年轻时候的斗志已被岁月消磨殆尽,那时认为自己不是凡夫俗子,将来肯定要干一番大事业,慢慢的,终于有一天好像发现自己其实非常的渺小.就像面对大海,面对宇宙苍穹,自己可能连一滴水滴,一粒尘埃都不是.&lt;/p&gt;
 &lt;p&gt;渐渐的,明白这个社会大部分人终究是普通人,而对于这些普通人的需求其实并不多,也并不是每个人都想当富翁,对于绝大多数人来说,只要有个安定的职业,有一份足够维持尊严的收入就不错了.&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://icutaotao122.github.io/categories/%E7%94%9F%E6%B4%BB/" term="生活" label="生活" />
+                            
+                        
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">生活的理解</title>
+            <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/life14/" />
+            <id>https://icutaotao122.github.io/posts/life14/</id>
+            <updated>2023-06-07T18:57:44&#43;08:00</updated>
+            <published>2020-11-14T17:27:00&#43;08:00</published>
+            <author>
+                    <name>书书福福悦读</name>
+                    <uri>https://tomhutao.netlify.app/</uri>
+                    <email>https://tomhutao.icu/</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在这个世界上,何谓恶,何谓善?不同的种族和意识形态由于立场和角度不同,导致了结论的大相径庭.在这个多远的世界里存在着多元的真理,当真理和真理发生冲突时,人类便不可避免的陷入惶恐之中,不同的理念和立场在……</summary>
+            
+                <content type="html">&lt;p&gt;在这个世界上,何谓恶,何谓善?不同的种族和意识形态由于立场和角度不同,导致了结论的大相径庭.在这个多远的世界里存在着多元的真理,当真理和真理发生冲突时,人类便不可避免的陷入惶恐之中,不同的理念和立场在冲撞,在对抗,导致了仇恨,流血和战争.&lt;/p&gt;
+&lt;p&gt;在这个世界上好人和坏人都不太多,大部分人属于中间状态.其实一个人需要的并不多,也不是每个人都想当富翁,对于大多数人来说,只要有个安定的职业,有一份足够维持尊严的收入就不错了.生活应该给每一个愿意努力工作的人提供希望&lt;/p&gt;
 </content>
             
             
@@ -16271,7 +16344,7 @@
             <title type="text">只是看起来很努力</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/life11/" />
             <id>https://icutaotao122.github.io/posts/life11/</id>
-            <updated>2023-06-07T17:24:03&#43;08:00</updated>
+            <updated>2023-06-07T18:55:53&#43;08:00</updated>
             <published>2020-11-08T17:21:53&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -16282,7 +16355,7 @@
             
                 <content type="html">&lt;p&gt;今天室友结婚,许久不见的室友终于见上一面,圈子永远有他存在的需要,能聊的来的还是聊的来,处不来还是处不来.在这之前,总是想当然的认为自己很努力,起码比别人强,但是今天真正认识到,那些条件比你好的多的,努力的程度丝毫不会低于你,也许大家嘴上都再抱怨,但起码能踏踏实实的的努力,行动永远比语言更具有说服力,&lt;/p&gt;
 &lt;p&gt;很害怕,感觉自己曾经拥有的东西被自己一件件丢掉,而他人却是一件件得到,并且还在不断努力的得到.我怕,怕看到那细微的差距,慢慢变成不可逾越的鸿沟,&amp;lt;血色浪漫&amp;gt;中说过：&lt;strong&gt;如果有一天,机会到了你的面前,你却无法抓住,那是因为你没有抓住机会的本领,到那时你将无话可说&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;回想这几年的工作经历,想起&amp;lt;我的团长我的团&amp;gt;,孟烦了说,对于炮灰团中的老兵渣子来说,我们不存在忠诚,我们只不过是里面的一个数字,上面只把我们当做可以消耗的物资.活着,我们什么也没有,唯一仅有的就是我们的生命,死亡没什么可怕,但是苟活又有什么不好了.原来自己是这么的类似,自己一样没有任何的忠诚,自己只是为生存而工作,看过太多公司,自己领悟最深刻的就是没有&lt;/p&gt;
+&lt;p&gt;回想这几年的工作经历,想起&amp;lt;我的团长我的团&amp;gt;,孟烦了说,对于炮灰团中的老兵渣子来说,我们不存在忠诚,我们只不过是里面的一个数字,上面只把我们当做可以消耗的物资.活着,我们什么也没有,唯一仅有的就是我们的生命,死亡没什么可怕,但是苟活又有什么不好了.原来自己是这么的类似,自己一样没有任何的忠诚,自己只是为生存而工作,看过太多公司,自己领悟最深刻的就是没有.&lt;/p&gt;
 &lt;p&gt;人能帮你,除了你自己,这个世界上只有靠自己才有出路......&lt;/p&gt;
 </content>
             
@@ -16310,7 +16383,7 @@
             <title type="text">室友的人生大事</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/life10/" />
             <id>https://icutaotao122.github.io/posts/life10/</id>
-            <updated>2023-06-07T17:21:43&#43;08:00</updated>
+            <updated>2023-06-07T18:56:07&#43;08:00</updated>
             <published>2020-11-07T17:19:15&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -16325,7 +16398,7 @@
 &lt;p&gt;赶在三十岁之前解决婚姻大事,对很多人来说是重要的一步,老话说,三十而立,三十岁后就要有担当,以后的路必须对自己,对家庭负责,相信对很多人来说这是一种无形压力,不管你想要还是不想要,婚姻到底是什么?&lt;/p&gt;
 &lt;p&gt;&amp;lt;莫迪和瑞克&amp;gt;中说过：&lt;strong&gt;爱情,不过是让动物繁衍后代的化学反应罢了。开始时让人头昏脑热，然后就慢慢消退，只留给你一段失败的婚姻&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;也许婚姻就是一种担当,证明长大了,可以赡养父母,家庭子女.......&lt;/p&gt;
-&lt;p&gt;参加婚姻很高兴,更高兴的是室友又可以见面,唯一遗憾的是有个室友好像失联一样,也许他已经不想在和昔日的小伙伴扯上联系,也许他真的是忘记了,但永远记得他是我们寝室拥有最聪明脑袋的那一个&lt;/p&gt;
+&lt;p&gt;参加婚姻很高兴,更高兴的是室友又可以见面,唯一遗憾的是有个室友好像失联一样,也许他已经不想在和昔日的小伙伴扯上联系,也许他真的是忘记了,但永远记得他是我们寝室拥有最聪明脑袋的那一个.&lt;/p&gt;
 </content>
             
             
@@ -16388,7 +16461,7 @@
             <title type="text">我的团长我的团----迷龙</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/life9/" />
             <id>https://icutaotao122.github.io/posts/life9/</id>
-            <updated>2023-06-07T17:19:04&#43;08:00</updated>
+            <updated>2023-06-07T18:56:17&#43;08:00</updated>
             <published>2020-11-05T17:15:41&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -16777,7 +16850,7 @@
             <title type="text">不进则退</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/life33/" />
             <id>https://icutaotao122.github.io/posts/life33/</id>
-            <updated>2023-06-07T17:59:45&#43;08:00</updated>
+            <updated>2023-06-07T18:52:03&#43;08:00</updated>
             <published>2020-10-26T17:58:52&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -16870,7 +16943,7 @@
             <title type="text">面试</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/secret2/" />
             <id>https://icutaotao122.github.io/posts/secret2/</id>
-            <updated>2023-06-07T18:07:39&#43;08:00</updated>
+            <updated>2023-06-07T18:57:53&#43;08:00</updated>
             <published>2020-10-15T18:04:29&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -16906,7 +16979,7 @@
             <title type="text">失业</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/secret1/" />
             <id>https://icutaotao122.github.io/posts/secret1/</id>
-            <updated>2023-06-07T18:03:39&#43;08:00</updated>
+            <updated>2023-06-07T18:57:52&#43;08:00</updated>
             <published>2020-10-13T18:01:15&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -16928,7 +17001,7 @@
                             
                             
                             
-                                <category scheme="https://icutaotao122.github.io/categories/%E6%88%92/" term="戒" label="戒" />
+                                <category scheme="https://icutaotao122.github.io/categories/%E4%B8%89%E7%9C%81/" term="三省" label="三省" />
                             
                         
                     
@@ -17012,6 +17085,47 @@
                 <content type="html">&lt;p&gt;有一个非常有趣的实验，科学家将一只跳蚤放进玻璃杯中，跳蚤很容易就跳出1米的高度，轻易逃出玻璃杯。再次将跳蚤放进玻璃杯加上盖子，第二天科学家去掉玻璃盖，可跳蚤这时无论怎么跳，高度只有50厘米，很难跳出玻璃杯。&lt;/p&gt;
 &lt;p&gt;这只跳蚤就如同当代的大部分人，我们往往根据过去的经验，知识来理解世界，但这些知识经验反过来又限制了我们。&lt;strong&gt;人总是倾向于忽视长远的目标而忙于眼下事物，丢掉宏观视野而着眼微观世界，忘记了事物的本质而只图表面形式&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;如何让那只跳蚤恢复自己的能力了？科学家在玻璃杯中放进第二只跳蚤，这只跳蚤能跳2米高，第二天，那只跳不出玻璃杯的跳蚤就恢复原有的能力，轻易逃出玻璃杯。人想要成长就需要放空自己，所谓的空杯心态，就是不以物喜不以己悲。不要把自己太当人，不要把别人不当人，当拥有一颗平静的心，去吸纳，接收新鲜的事物，成长反而是水到渠成的事。&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://icutaotao122.github.io/categories/%E7%94%9F%E6%B4%BB/" term="生活" label="生活" />
+                            
+                        
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">幻想如镜花水月</title>
+            <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/life49/" />
+            <id>https://icutaotao122.github.io/posts/life49/</id>
+            <updated>2023-06-07T18:50:07&#43;08:00</updated>
+            <published>2020-10-01T18:34:47&#43;08:00</published>
+            <author>
+                    <name>书书福福悦读</name>
+                    <uri>https://tomhutao.netlify.app/</uri>
+                    <email>https://tomhutao.icu/</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">如果17年买比特币，说不定现在就是百万富翁，如果14年年底进入股市，本金应该可以翻一倍，如果15年提前就买好房子，现在起码要赚一倍，全款可以一套，贷款应该可以搞个2、3套，如果是2000年开始买房，那……</summary>
+            
+                <content type="html">&lt;p&gt;如果17年买比特币，说不定现在就是百万富翁，如果14年年底进入股市，本金应该可以翻一倍，如果15年提前就买好房子，现在起码要赚一倍，全款可以一套，贷款应该可以搞个2、3套，如果是2000年开始买房，那时候房子不值钱，如果爸妈有这个意识，现在说不定就是个富二代，如果当时能早点醒悟，应该会好好读书，也不至于考个不入流的学校，出来后的路应该好走些.......&lt;/p&gt;
+&lt;p&gt;不知从何时起，自己竟然喜欢YY，喜欢这种白日做梦的感觉，不经对自己有种鄙夷。总是期望着中百万大奖，想着不劳而获，却不愿脚踏实地的付出，有耕耘才有收获，春天不去播种，秋天怎么会有收获？想象能暂时抚平空无的心，但现实不会有任何改变。幻想如镜花水月，可望而不可及，现实才是头等问题。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img0.baidu.com/it/u=2804120933,1646267368&amp;amp;fm=253&amp;amp;fmt=auto&amp;amp;app=120&amp;amp;f=JPEG?w=1280&amp;amp;h=800&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我们总将希望寄托于过去，寄托于他人，自己从不努力，总是缅怀着，幻想着过去，企图想改变时间来改变自己的命运，的确，昨天是今天的过去，但今天将是明天的过去，你无法改变过去，但是你可以改变现在，把时间，精力浪费在无意义的幻想上，只会产生让自己再次后悔、幻想的回忆，这种死循环将不停蚕食你那宝贵的时间。&lt;/p&gt;
+&lt;p&gt;一切的根源都在你自己，别人休息你也休息，别人上网你也上网，别人逛街，你也逛街，别人学习你依然躺尸，别人得不到的东西，你也别想得到，你什么也不做，指望着他人，他人的改变和你有什么关系？人与人的差距为什么那么大?你靠幻想解决问题，别人用实际行动解决问题，行动能创造价值，幻想能吗？&lt;/p&gt;
+&lt;p&gt;不要缅怀过，幻想过去，过去无可眷恋，值得期待的只有明天，脚踏现实，从现在开始做出改变，改变自己，不要一直做烂事，然后再后悔，好像后悔有什么用似的，一切的一切都在你自己。&lt;/p&gt;
 </content>
             
             
