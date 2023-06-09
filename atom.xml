@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">今日事，今日毕</title>
     <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2023-06-09T13:05:44&#43;08:00</updated>
+    <updated>2023-06-09T13:19:20&#43;08:00</updated>
     <id>https://icutaotao122.github.io/</id>
     <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://icutaotao122.github.io/atom.xml" />
@@ -13888,7 +13888,7 @@
             <title type="text">未来会成为什么样的人?</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/life120/" />
             <id>https://icutaotao122.github.io/posts/life120/</id>
-            <updated>2023-06-09T12:59:42&#43;08:00</updated>
+            <updated>2023-06-09T13:19:12&#43;08:00</updated>
             <published>2021-03-10T12:58:11&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -13916,6 +13916,14 @@
             
             
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://icutaotao122.github.io/categories/%E7%94%9F%E6%B4%BB/" term="生活" label="生活" />
+                            
+                        
                     
                 
                     
@@ -14313,7 +14321,7 @@
             <title type="text">瘾来了</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/life110/" />
             <id>https://icutaotao122.github.io/posts/life110/</id>
-            <updated>2023-06-09T12:48:58&#43;08:00</updated>
+            <updated>2023-06-09T13:19:10&#43;08:00</updated>
             <published>2021-02-27T12:47:44&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -14331,6 +14339,14 @@
             
             
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://icutaotao122.github.io/categories/%E7%94%9F%E6%B4%BB/" term="生活" label="生活" />
+                            
+                        
                     
                 
                     
@@ -24490,6 +24506,42 @@
                             
                             
                                 <category scheme="https://icutaotao122.github.io/categories/%E8%81%8C%E4%B8%9A%E8%A7%84%E5%88%92/" term="职业规划" label="职业规划" />
+                            
+                        
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">扬帆起航</title>
+            <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/life101/" />
+            <id>https://icutaotao122.github.io/posts/life101/</id>
+            <updated>2023-06-09T13:19:07&#43;08:00</updated>
+            <published>0001-01-01T00:00:00&#43;00:00</published>
+            <author>
+                    <name>书书福福悦读</name>
+                    <uri>https://tomhutao.netlify.app/</uri>
+                    <email>https://tomhutao.icu/</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">最后一天假期,在不知不觉中度过,对于明天的上班有点小小恐惧,悠闲自得的日子总是过的那么快,对于整个假期,原计划是想看完十几本书,结果只看了6-7本,可以说整个假期任务完成不到50%,人总是高估自己在短……</summary>
+            
+                <content type="html">&lt;p&gt;最后一天假期,在不知不觉中度过,对于明天的上班有点小小恐惧,悠闲自得的日子总是过的那么快,对于整个假期,原计划是想看完十几本书,结果只看了6-7本,可以说整个假期任务完成不到50%,人总是高估自己在短期内的行为.调整好心态,又是一个新的开始,每天一点进步,每天不一样,这就是希望.&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://icutaotao122.github.io/categories/%E7%94%9F%E6%B4%BB/" term="生活" label="生活" />
                             
                         
                     
