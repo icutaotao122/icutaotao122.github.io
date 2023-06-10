@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">今日事，今日毕</title>
     <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2023-06-11T01:44:30&#43;08:00</updated>
+    <updated>2023-06-11T01:51:56&#43;08:00</updated>
     <id>https://icutaotao122.github.io/</id>
     <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://icutaotao122.github.io/atom.xml" />
@@ -15421,7 +15421,7 @@
             <title type="text">别再推书了</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/secret3/" />
             <id>https://icutaotao122.github.io/posts/secret3/</id>
-            <updated>2023-06-11T01:02:23&#43;08:00</updated>
+            <updated>2023-06-11T01:48:04&#43;08:00</updated>
             <published>2022-06-11T01:00:25&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
@@ -24112,6 +24112,42 @@
         </entry>
     
         <entry>
+            <title type="text">知易行难</title>
+            <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/secret7/" />
+            <id>https://icutaotao122.github.io/posts/secret7/</id>
+            <updated>2023-06-11T01:51:46&#43;08:00</updated>
+            <published>2021-11-18T01:13:21&#43;08:00</published>
+            <author>
+                    <name>书书福福悦读</name>
+                    <uri>https://tomhutao.netlify.app/</uri>
+                    <email>https://tomhutao.icu/</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">最近一段时间，上网上的有点过了头，已经到了玩物丧志地步，感觉网瘾实在太大，只要一开机，时间基本一下就过了，一天好像什么也没做，就这样白白浪费掉，唉，这种恶性循环，搞的人也是越来越萎靡，暮气沉沉，今天监……</summary>
+            
+                <content type="html">&lt;p&gt;最近一段时间，上网上的有点过了头，已经到了玩物丧志地步，感觉网瘾实在太大，只要一开机，时间基本一下就过了，一天好像什么也没做，就这样白白浪费掉，唉，这种恶性循环，搞的人也是越来越萎靡，暮气沉沉，今天监督自己开始戒网瘾，20211118.&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://icutaotao122.github.io/categories/%E6%82%9F/" term="悟" label="悟" />
+                            
+                        
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">魏和尚的死让李云龙彻底爆发</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/life332/" />
             <id>https://icutaotao122.github.io/posts/life332/</id>
@@ -24356,7 +24392,7 @@
             <title type="text">开始就应该有个目标</title>
             <link rel="alternate" type="text/html" href="https://icutaotao122.github.io/posts/secret17/" />
             <id>https://icutaotao122.github.io/posts/secret17/</id>
-            <updated>2023-06-11T01:44:20&#43;08:00</updated>
+            <updated>2023-06-11T01:51:05&#43;08:00</updated>
             <published>2021-11-11T01:40:16&#43;08:00</published>
             <author>
                     <name>书书福福悦读</name>
