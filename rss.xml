@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Fri, 16 Jun 2023 23:24:20 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 20 Jun 2023 16:17:43 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://icutaotao122.github.io/rss.xml" />
         
@@ -1062,6 +1062,199 @@
                                 
                                 
                                     <category domain="https://icutaotao122.github.io/categories/%E6%80%9D%E8%80%83/">思考</category>
+                                
+                            
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>NLP模型</title>
+                <link>https://icutaotao122.github.io/posts/nlp%E6%A8%A1%E5%9E%8B/</link>
+                <guid isPermaLink="true">https://icutaotao122.github.io/posts/nlp%E6%A8%A1%E5%9E%8B/</guid>
+                <pubDate>Sun, 18 Jun 2023 23:40:11 &#43;0800</pubDate>
+                
+                    <author>https://tomhutao.icu/ (书书福福悦读)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;NLP其实是三个英文的缩写，Neuro-Linguistic Programming，翻译成中文就是神经语言程序学。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;N（Neuro）指的是神经系统，包括大脑和思维过程。&lt;/li&gt;
+&lt;li&gt;L（Linguistic）是指语言，更准确的说，是指从感觉信号的输入到构成意思的过程。&lt;/li&gt;
+&lt;li&gt;P（Programming）是指为产生某种后果而要执行的一套具体指令——即指我们思维上及行为上的习惯，就如同电脑中的程序，可以透过更新软件而改变。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;故此，NLP被解释为研究我们大脑如何工作的学问。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pics3.baidu.com/feed/91ef76c6a7efce1b58df0a9990fd61d8b58f6524.jpeg?token=e872b4a86fba6254d9a3e02661c90c9b&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这个工具主要帮助我们进行分析：&lt;strong&gt;人们在思考某些事情，或者解释一些社会现象的时候，会有不同的思维，然后这些思维分别处于不同的层次——在不同层次上思考问题，最终的答案和解决方案是不一样的。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;人生之中每一件与我们相关的事情，我们都会赋予其一些意义。但人生中的事情这么多，我们不断地处理它们，往往因为忙碌而变得被动和迷惘，不知道什么应该做，什么才是重要的；也分不清哪些事情是短暂不足道的，哪些是对人生有深远影响的。&lt;/p&gt;
+&lt;p&gt;借助NLP模型，我们可以相对标准的给每一件事情赋予相对意义，如此就能够把大部分时间和精力放在有深远意义的事情上，累积出来的效果，自然把人生推至更理想的高线上。&lt;/p&gt;
+&lt;p&gt;理解层次（Neuro-Logical Levels）最初由格雷戈里·贝特森（英国人类学家、社会科学家、语言学家、视觉人类学家、符号学家、控制论学者）发展出来，后由罗伯特·迪尔茨(国际顶级NLP大师)整理出来。&lt;/p&gt;
+&lt;p&gt;该理论认为，在任何系统中，&lt;strong&gt;人的生活——包括系统本身的活动，都可以通过六个层次进行描述和理解，它们分别是：环境、行为、能力、信念及价值观、身份、精神&lt;/strong&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;精神&lt;/strong&gt;：“我”与其他人事物的关系（你人生的意义）;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;身份&lt;/strong&gt;：“我”是以什么身份，去实现人生的意义（我是谁，对自己的定位）;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;信念&lt;/strong&gt;：“我”应有怎样的信念和价值观，去配合这个身份（为什么做、有何意义）;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;能力&lt;/strong&gt;：“我”有什么选择？我已掌握哪些能力？（如何做、懂不懂做）;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;行为&lt;/strong&gt;：在环境中“我”做出的举动（做什么、有没有做）;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;环境&lt;/strong&gt;：外界的条件、障碍（时间、地点、人事物）;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://inews.gtimg.com/newsapp_bt/0/14666681431/641&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其中&lt;strong&gt;环境、行为、能力&lt;/strong&gt;称为低三层，这是我们可以意识到的层次，&lt;strong&gt;而信念/价值观、身份、精神（系统）称为高三层&lt;/strong&gt;，这在我们日常生活中需细心分析才有可能被发现。通常低层次的问题在高一个层次能轻易找到方法，可倘若在同层次或其低层次来寻找方法，效果往往不尽如人意或者消耗精力过大。&lt;/p&gt;
+&lt;h3 id=&#34;第一层次环境&#34;&gt;第一层次：环境&lt;/h3&gt;
+&lt;p&gt;环境层次代表我们所处的环境及相关的人。环境层次确定了个体做出反应的外部机会及限制，回答了何处（&lt;strong&gt;where&lt;/strong&gt;）和何时（&lt;strong&gt;when&lt;/strong&gt;）的问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思维层次处在环境层的人，聚焦于外在环境和客观条件，看事情喜欢从外界找原因，认为问题的出现都是别人的错或环境不好，其主要的表现形式是抱怨&lt;/strong&gt;，比如事业不顺是因为经济萧条，自己在公司郁郁不得志是因为上司不够有眼光，失败了就抱怨自己出身不好、命运不公、人性险恶等。&lt;/p&gt;
+&lt;h3 id=&#34;第二层次行为&#34;&gt;第二层次：行为&lt;/h3&gt;
+&lt;p&gt;行为层次代表我们的所做所为，是关于个人行为及活动，个人在环境中做了些什么动作？也就是由环境影响而采取的特定行动和反应组成，它主要回答什么（&lt;strong&gt;what&lt;/strong&gt;）的问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思维层次处在行为层次的人，关注自身行为，他们不会太多抱怨外部环境&lt;/strong&gt;，因为他们意识到自己也属于环境的一部分，因此转而从自己内部查找问题，&lt;strong&gt;他们认为问题的出现是因为自己的行动力不够，其主要的表现形式是：行动、行动、再行动&lt;/strong&gt;。比如，努力就能解决一切问题，工资低就努力多做几份兼职。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2Fd07be526-538c-4b62-a532-7873850dd846%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&amp;amp;refer=http%3A%2F%2Fsafe-img.xhscdn.com&amp;amp;app=2002&amp;amp;size=f9999,10000&amp;amp;q=a80&amp;amp;n=0&amp;amp;g=0n&amp;amp;fmt=auto?sec=1689839619&amp;amp;t=6718ff74b20d9c41bc326029823bd471&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;第三层次能力&#34;&gt;第三层次：能力&lt;/h3&gt;
+&lt;p&gt;能力层次体现的是我们所能应用的知识、策略和技巧，也就是我们通常所说的能力——能力是个人在环境中用来指导行动的，是通过心灵地图、计划或策略行为和行动提供指导、引领方向。主要回答（&lt;strong&gt;how&lt;/strong&gt;）的问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思维处在这一层次的人会思考的更加深入，他们关注于能力提升，认为问题的出现是因为自己能力不够，他们不会只顾闷头盲目的努力，而是思考是否有其他更好、更便捷的方法，他们讨厌用身体上的勤奋来掩盖思维上的懒惰&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;要想做成一件事，光靠肯吃苦，肯琢磨就够了吗？不是，好的方法会事半功倍。比方挣钱光靠肯吃苦，能钻研还不够，还得看准时机，目光长远，规避风险，同时自身实力还需过硬，否则当机会到了你的面前，你也没有足够的实力抓住它。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;“能力”还有一个隐含的意义：如何选择&lt;/strong&gt;。方向不对，努力白费，选择本身也是一种能力，毕竟选择行为背后是一个人的思维方式、价值观、决策力。正确的选择会让努力事半功倍，错误的选择会让努力事倍功半。&lt;/p&gt;
+&lt;h3 id=&#34;第四层次信念及价值观&#34;&gt;第四层次：信念及价值观&lt;/h3&gt;
+&lt;p&gt;信念层次体现的是我们所相信或影响我们的概念，它提供了支持与否认能力的强化物（激励和允许），回答了（&lt;strong&gt;why&lt;/strong&gt;）的问题。&lt;/p&gt;
+&lt;p&gt;环境、行为和能力层次都是由信念和价值观塑造。&lt;strong&gt;能力和技巧为环境中的各种行为提供了支持，而信念和价值观则为能力和技巧提供了动机和指导&lt;/strong&gt;——为什么人会在特定的环境中以特定的方式做事。信念和价值观提供了一个强化的过程，这个强化过程支持我们特定的能力和行为，&lt;strong&gt;信念和价值观决定了我们如何为事情赋予意义&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;思维处在这一层次的人会更多思考事情的本质，关注什么对自己是重要的——自己究竟想要什么，他们以结果为导向，思考事物本身的意义，&lt;strong&gt;其主要的表现形式是：做正确的事情&lt;/strong&gt;。如果说能力层是在思考通往成功的方法——正确的做事，那么这个层次是在通向成功的方法中选择最优的答案——做正确的事。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img1.baidu.com/it/u=776565497,31617653&amp;amp;fm=253&amp;amp;fmt=auto&amp;amp;app=138&amp;amp;f=JPEG?w=500&amp;amp;h=668&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;第五层次身份&#34;&gt;第五层次：身份&lt;/h3&gt;
+&lt;p&gt;身份层次体现的是我们最基础的核心价值与使命，通过自我认同确定整体目标（使命），主要回答（&lt;strong&gt;who&lt;/strong&gt;）的问题，也就是我是谁。&lt;/p&gt;
+&lt;p&gt;信念和价值观支撑着个人的身份定位——即在某时间、某地点做什么，如何做，为什么做等问题背后的“我是谁”的问题。身份通过一系列具有优先次序的信念和价值观表现出来；而这些信念和价值观是由更大范围的技巧和能力支撑的，反过来技巧和能力又展示了特殊的信念和价值观；高效的能力产生了一个更大范围的具体行为和活动，这些行为和活动是在很多特定的环境和条件下完成的，实现了对信念和价值观的维护与追求。&lt;/p&gt;
+&lt;p&gt;身份有两种，一种是社会和环境赋予给你的表象身份，比如你是一个员工、一位职场妈妈、一个管理者。更深层次的身份是你赋予给自己的“我是谁”。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思维处在在这个层次的人会思考“我是谁”，他们关注的是“我是谁，我想成为一个什么样的人”，其主要的表现形式是：因为我是一个什么样的人，所以我会做出某种选择和行动&lt;/strong&gt;。能够自我觉知的人是智慧的，当想明白了“我是谁”，就不会再陷入精神内耗中，会对自我更加坚定，对人生更加平和。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img0.baidu.com/it/u=750128186,3774182670&amp;amp;fm=253&amp;amp;fmt=auto&amp;amp;app=120&amp;amp;f=JPEG?w=1422&amp;amp;h=800&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;第六层次精神&#34;&gt;第六层次：精神&lt;/h3&gt;
+&lt;p&gt;这个层次超越了前面五个层次，是与我们自己关系极为密切的精神领域，它认为我们是超越我们自身的更大系统的一部分，就像个体之于家庭、社会或全球的关系，回答了为了谁（&lt;strong&gt;for whom&lt;/strong&gt;）及为了什么（&lt;strong&gt;for what&lt;/strong&gt;）的问题。&lt;/p&gt;
+&lt;p&gt;身份层次涉及人们的愿景以及他们所属的更大的系统。系统是一个更高层次，我们称之为精神层次，这个层次涉及人们对于自己所隶属并活动于其中的更大系统的认知问题。这些认识从深层次解答了人们的活动是“为了谁”和“为了什么”的问题，并为人们的行为、能力、信念及价值观，和身份定位提供了深层意义和目的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思维处在这个层次的人会思考人生的意义，他们关注“我与这个世界的关系是什么样的？“，”人生的意义是什么？“其主要的表现形式是：如何改变这个世界，让它更好&lt;/strong&gt;？这个世界只有极少数人能够达到精神层次，因为他们思考的是与这个世界的关系。&lt;/p&gt;
+&lt;p&gt;在NLP模型中，上层可以看透下层，但下层往往不能理解上层，通过上层对下层的贯穿可实现理解的贯通，从而帮助使用者更容易找出解决问题的方法，突破困惑，走出迷雾。因此NLP模型也称为”理解层次贯穿法“，是非常不错的工具。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img2.baidu.com/it/u=569754587,1779042639&amp;amp;fm=253&amp;amp;fmt=auto&amp;amp;app=138&amp;amp;f=PNG?w=847&amp;amp;h=500&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第一层次的人找环境问题，他们是抱怨者，喜欢说：”都是你们的错！“&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第二层次的人找努力问题，他们是行动派，喜欢说：”我还不够努力!“&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第三层次的人找方法问题，他们是战术家，喜欢说：”方法总比问题多！”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第四层次的人找选择问题，他们是战略家，喜欢问：“什么东西最重要？”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第五层次的人找身份问题，他们是觉醒者，喜欢问：“我要成为什么样的人？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第六层次的人找意义问题，他们是创造者，喜欢说：“人活着就是为了利他！”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;参考&#34;&gt;参考：&lt;/h4&gt;
+&lt;p&gt;1.&lt;a href=&#34;https://zhuanlan.zhihu.com/p/76185096&#34;&gt;逻辑层次—不能忽略的NLP思维利器&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.&lt;a href=&#34;https://baijiahao.baidu.com/s?id=1754255710863827462&amp;amp;wfr=spider&amp;amp;for=pc&#34;&gt;NLP理论告诉你：你的思维觉知处在哪个层级？帮助你解决问题！&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.&lt;a href=&#34;https://baijiahao.baidu.com/s?id=1754349700968313829&amp;amp;wfr=spider&amp;amp;for=pc&#34;&gt;NLP逻辑层次图-思考问题的方式&lt;/a&gt;&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://icutaotao122.github.io/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%82%A6%E8%AF%BB/">学习与悦读</category>
+                                
+                            
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>DIKW金字塔模型</title>
+                <link>https://icutaotao122.github.io/posts/dikw%E9%87%91%E5%AD%97%E5%A1%94%E6%A8%A1%E5%9E%8B/</link>
+                <guid isPermaLink="true">https://icutaotao122.github.io/posts/dikw%E9%87%91%E5%AD%97%E5%A1%94%E6%A8%A1%E5%9E%8B/</guid>
+                <pubDate>Sat, 17 Jun 2023 23:39:55 &#43;0800</pubDate>
+                
+                    <author>https://tomhutao.icu/ (书书福福悦读)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;人类的智慧，都来源于日常知识的积累。而知识，是从以数据为载体的各种信息中不断地归纳总结提炼出来的。信息化与数字化的一个最大差别，是在于信息化是对于知识的演绎，以提升效率为主，而数字化是知识的归纳，以提炼价值为主。&lt;/p&gt;
+&lt;p&gt;概言之，人类一直在努力提高认识世界的水平 ，通过&lt;strong&gt;观察物理世界 、描述现状，理解客观规律 、来解释过去，指导现在，预测未来&lt;/strong&gt;。通过对自然信息的&lt;strong&gt;记录、描述、分析和推理&lt;/strong&gt;，逐渐建立了经典的&lt;strong&gt;DIKW知识金字塔体系&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DIKW金字塔&lt;/strong&gt;很好地描述了人类认识世界的规律和层次结构，分别是：&lt;strong&gt;数据（Data原始的事实集合）、信息（Information可被分析测量的结构化数据）、知识（Knowledge需要洞察力和理解力进行学习）、智慧（Wisdom推断未来发生的相关性，指导行动）&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://images.elecfans.top/uploads/20230108/ca8458d2-8f52-11ed-bfe3-dac502259ad0.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;数据是基础，信息是支撑，知识是核心，智慧是灵魂&lt;/strong&gt;。自底向上每一层都比下一层增加某些特质。数据层是最基本的原始素材；信息层加入了有逻辑的数据内容；知识层提炼信息之间的联系，加入“如何去使用”；智慧层加入预测能力，能回答“为什么用”。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;数据（Data）：数据是DIKW中最底层也是最基础的一个概念。数据是形成信息，知识和智慧的源泉,是关于事件的一组离散的、客观的事实描述，是构成信息和知识的原始材料。通过原始观察及量度获得了数据。包括数字、文字、图形、&lt;a href=&#34;https://m.hqchip.com/app/1537&#34;&gt;音频&lt;/a&gt;、&lt;a href=&#34;https://www.elecfans.com/v/&#34;&gt;视频&lt;/a&gt;等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;信息（Information）：信息必然来源于数据并高于数据，信息＝数据＋处理，信息是具有时效性的有一定含义的，有逻辑的、经过加工处理的、对决策有价值的数据流。通过分析数据间的关系获得了信息。一般来说，与信息这一概念密切相关的概念包括沟通、控制、约束、指令、含义、精神刺激、模式、感知以及表达等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;知识（Knowledge）：知识是需要提炼信息之间的联系，从中得到所需要的规律性认识，是对信息的应用。在完成当下任务的行动中应用信息产生了知识。知识就是知道了什么（Know-what）、知道怎么做（Know-how）、知道谁（Know-who），知道了时间（Know-when）。知识更接近行动，它与决策相关。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;智慧（Wisdom）：智慧是知识层次结构中的最高一级。可以指思考分析、通情达理或寻求真理的能力。它和智力、聪明不同，智慧更重视人生哲学上的能力，智慧着眼未来，它具有预测和未来影响的判断能力。 从采集数据、提炼有关系的信息到总结成能解决当下问题的知识，到形成普适的智慧，这个是人类认识和改造世界的普遍规律。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic.rmb.bdstatic.com/bjh/down/1cc8ac74160b92564cd19e1c3745592c.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;数据是原始素材，本身不包含任何潜在的意义；通过某种方式组织和处理数据，分析数据间的关系，数据就有了意义，这就是信息，它解决了诸如谁（Who）、什么（What）、什么时间（When）、哪里（Where）的问题；结合经验、上下文、诠释和反省对信息进行判断和确认的过程就是知识，&lt;strong&gt;知识是信息的集合，但不仅仅是集合，还需要理解，是认知和分析的过程，使信息变得有用，可以回答“如何（How）”的问题&lt;/strong&gt;；智慧是做正确判断和决定的能力，包括对知识的最佳使用，它关注的是未来，试图理解过去未曾理解的东西，因此智慧可以回答“为什么（Why）”的问题。随着数据向信息、知识和智慧的发展，理解的深度在不断增加，通过经验、阅历、见识的累积，逐步形成对事物的深刻认识。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;数据和信息描述世界，知识和智慧理解世界。知识能够穿越时空，智慧可以洞悉未来&lt;/strong&gt;。知识是通过对信息总结、演绎、比较等方法，提取出来的有价值的部分，是人类文明传承的重要载体。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;知识是人类通过实践对自然、社会和思维活动形态及其规律认识和描述的信息。他来源于人类实践，并反作用于实践，对实践具有指导性作用。知识是人类认识世界和改造世界的实践的产物。知识是信息的一部分，是对自然、社会、思维活动形态、规律的认识把握，并加以描述。描述是知识和认识的关键区别，凡是认识了的东西都可以描述，知识经过描述，就必须依赖物质载体才能存储起来，才能流传、积累、交流、发展、开发、利用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;**智慧，是对知识的最佳使用。**智慧具有非确定性的特点和滞后影响。在知识的基础之上，反复理解实践，参透规律，并懂得随机应变去运用它，最终将学识内化为品格和关键能力。&lt;strong&gt;智慧的生成是一个潜移默化的自然过程，需要长期的知识积累，需要对知识展开反思性的深度思考和有意义的延伸联系，这样，在关键时刻就可以给我们至关重要的启发和指引.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic3.zhimg.com/v2-c70db1778c9765e81872efcee86a3c05_r.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;一切有效学习就是建立在个体“感知、记忆、理解、应用”基础上的“分析、联系、评价和创造”的过程.建构主义认为，外界的信息只有被学习者接受并经过加工后才能进入学习者的知识结构，对丰富的信息资源进行积极的建构式、发现式学习才是学生获取知识的有效途径。&lt;/p&gt;
+&lt;p&gt;建构方式无外乎两种:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一是构建逻辑框架;&lt;/li&gt;
+&lt;li&gt;二是联系实际应用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;DIKW模型&lt;/strong&gt;是层进式的基本结构，层级演进，步步深入。“层进”是指对知识内在结构的逐层深化的学习，经由感知、记忆、思维的认知过程，由低到高，由表及里，由现象到本质;&lt;strong&gt;学习目标由了解、理解、应用、分析、评判、创造&lt;/strong&gt;等不断加深的层次构成，最终把外在的知识转化为内在的经验、价值和能力。&lt;/p&gt;
+&lt;h3 id=&#34;dikw金字塔模型的启发&#34;&gt;DIKW金字塔模型的启发&lt;/h3&gt;
+&lt;p&gt;任何一门知识、技能或语言的学习都存在一定规律，按照其规律进行学习将会是最高效的。&lt;/p&gt;
+&lt;p&gt;其次，任何学习都存在一定结构或框架——这里的结构或框架属于规律的一部分，如果能事先发现所要学习内容的结构或框架，按照结构或框架进行自上而下的展开学习，这个时候的效果是最好的。&lt;/p&gt;
+&lt;p&gt;但是大部分时候，我们的学习都是在无意识的情形下展开，比方读书，这种学习是一种发散式，或者说是一种自下而上的学习方式，其效率并没有自上而下的高效。&lt;/p&gt;
+&lt;p&gt;简言之，学习有自上而下和自下而上两种方式，而这两种方式最后的结果都是一样——学会某项技能或知识，但是自上而下的学习方式比自下而上的高效，或者说，事先找到知识或技能的结构，按照结构进行自上而下的安排学习，这种方式是最为科学的。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;参考&#34;&gt;参考：&lt;/h4&gt;
+&lt;p&gt;1.&lt;a href=&#34;https://www.elecfans.com/d/1975356.html&#34;&gt;DIKW金字塔模型（上）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.&lt;a href=&#34;https://www.fx361.com/page/2019/0314/4877457.shtml&#34;&gt;DIKW模型在历史教学中的应用及意义&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.&lt;a href=&#34;https://baijiahao.baidu.com/s?id=1740831624481118839&amp;amp;wfr=spider&amp;amp;for=pc&#34;&gt;DIKW模型在档案信息资源开发中的应用&lt;/a&gt;&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://icutaotao122.github.io/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%82%A6%E8%AF%BB/">学习与悦读</category>
                                 
                             
                         
