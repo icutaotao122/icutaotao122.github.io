@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.111.3"><meta name="theme-color" content="#fff" />
+    <meta name="color-scheme" content="light dark">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>底层逻辑：金字塔思维 | 今日事，今日毕</title>
+
+    <link rel="stylesheet" href="/css/meme.min.697665b8238583d73036b79445acb76d0b79ed047428cefbec5750263e48d07a.css"/>
+
+    
+    
+        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js" defer></script><script src="/js/meme.min.e46a57973d1dddaaea43e95f3156f49ed7c8d148d58672ded6db13a35d5bd5db.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
+
+    <meta name="author" content="书书福福悦读" /><meta name="description" content="花半秒钟就看透事物本质的人，和花一辈子都看不清事物本质的人，注定是截然不同的命运。 人与人之间的差距，本质在于思维。思维决定行为，行为决定人生。如果你思维清晰，你就能高瞻远瞩，透过现象看到本质，把握现在……" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="今日事，今日毕" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="今日事，今日毕" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://icutaotao122.github.io/posts/%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E9%87%91%E5%AD%97%E5%A1%94%E6%80%9D%E7%BB%B4/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2024-12-22T00:46:44+08:00",
+        "dateModified": "2025-01-01T01:22:02+08:00",
+        "url": "https://icutaotao122.github.io/posts/%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E9%87%91%E5%AD%97%E5%A1%94%E6%80%9D%E7%BB%B4/",
+        "headline": "底层逻辑：金字塔思维",
+        "description": "花半秒钟就看透事物本质的人，和花一辈子都看不清事物本质的人，注定是截然不同的命运。 人与人之间的差距，本质在于思维。思维决定行为，行为决定人生。如果你思维清晰，你就能高瞻远瞩，透过现象看到本质，把握现在……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  12051 ,
+        "image": ["https://p3-sign.toutiaoimg.com/tos-cn-i-axegupay5k/a89ca6917e004027966f3a11b3184819~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=LzqtgZbdTsSiZREUrMjJlm0VFrE%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/adb7edaecc9b49bc8b8635dc0aad668f~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=NW53KGNTHF8VHFZZQQt2VJAXRjs%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/64196a8dde2e440890ba7eb4b597a9ea~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=h8LSaN%2BVC2d37VHf47mBJ4XDwGk%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/61a6ba6f9d364548b24270d024a71e89~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=ztY6MtJ%2BwCRPiOVq1JUmvo2GAas%3D","https://p26-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a8e83d82d3014f028df1c8f6b15e619c~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=Caca%2FiJN%2FykL%2FdIUKf5%2FZ1uEQtw%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/f0cf1335c8594f24a0df88a4416b5fc9~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=Yyp5uw3Vsr12rd4%2Bqor1v%2FyIbwk%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a42c4dce46724bb49e06c400f9abd2a5~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=VTuk%2FyRbP%2FjrkgzoQHXc8XW45bc%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/1429f61b25b743a8b221f14dac9d49d3~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=3tvvlTqVUz1%2BUpU4eZG5EQbuEeY%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/89a173b1ff77407380bed00adec21d61~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=ZRMR8U6FYdAPpPsB7%2B7FsSEIzgM%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/990d3394bc8244679e7caebace66bceb~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=Mjx74IhkX%2BXnCqFqeJLSekzIai8%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/0ed5612041304e4eaf429f85bb60c3c8~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=qhSnqYKLQryJjvlLteis76qwuf8%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/21a2b2b19f1845959be992c9d2bb51e4~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=KHgmwgk3hOc2thWNaF9fZxgIvkY%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/ae108a7dc3384bb2aa74ea8df9d04a67~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=bl1c7JC2aFWPh8d%2Fn25hQC5F5%2Bk%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/1483d15971d047748e8e7da3ed31236c~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=Si17RXoPAAUS2dJjUrJm7aAssxw%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c0a74f979b8d4205bf7b9550726f7c92~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=iq%2FAWT1qLqloGqEpiwxPQhyoCXE%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/54eb3f1c0601450693cec479fa98484d~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=O%2FIyvkgrkL9xuruvm4iY73VfJNk%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/0c9c94390f1a49e68d5c2d163a0a20f2~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=nlzGvp3hD8O3XFTLbQgLbdN6nww%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/9a813e5129a3457182df4150dd60c7e0~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=MYVFHQNynb83lGIttuORs8EDLx8%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/bfcbbb58cccd4de88d6bd70da9b66a18~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=pPar47xn1O5n8%2F7fcjV1PcPq0wM%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/b17d3a2ea01e4671b63352d6e043271a~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=IZ5KZmTVzdCLWUGLQFVnjUwHX1Y%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/02f965cf4fb34d43acb0449c02aac9fe~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=0s1ENCFxCiDWElodcn82d1C%2BLfg%3D","https://p26-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/8d480f1642b24178887b5ef1f9ba0877~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=7yR7yL3P8r1w%2FLUsP1iuoG8p1PM%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/175f406970f04538b5f9ba8c986d4bc1~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=FJcdm5Bo4vbm2olBES0R8GjzRec%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/6a2e22454bb34d32816643566d331996~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=lzclJApQkQKF8anw6jWAHlN2l8E%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/d4597198366949b09ec44f29abef2ea7~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=GcTB8pF%2BPQlVJzoUdV%2BfUnQwpjU%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a7dd43a2c5e640bd83cd60f1c904dff3~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=xUU4C4%2B1yCFgfaQmIskkzWcEs0c%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/bdaebdf585424e858f2cf216c13edbe3~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=O0uMoRN%2BfAK7uZ%2BCHsB%2B54T8tsY%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/24f019170fff44249ece9bf3392bb1fb~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=HddsoqqCF%2BupGyPxXG%2FmW5hsrzU%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/0292fc9d73654bb6bcac64bdbf4f80c6~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=gSfTPCGDL2ZgNPi3NnCz1i3ZSDo%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/6c406600f00e4852970d5ad014c5fb11~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=vit7JFr9tvyCr3Oqwt%2FbM0FksKo%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a89118ba3118465d9a51e6545c65e06a~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=a3fvhNoatmWtriWbhGcXyGDuRQg%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/eb3c8fa1040642d7b8e5fd4049ff152e~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=tKfBsUCBXdUyii0DCMCODUVyohE%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c541d57a4d054705bdedffb88fffcedc~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=rd3SmzZm%2Fl%2F%2BCshbZYdnEinwi8o%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/b5cb4462c2eb4db58625c4be9472dbaf~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=i5nEhYW%2BbmZRGgcQeu5EDWaXPTg%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/9ead09bd90b44550a132e46eed485a4b~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=hylC4%2FSjxyWuLCO8kKzKLRmMRQ0%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c8f944e8be1c4354aa2ea30b3ae283cd~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=xGO8L1zlYcxoJkdU2WfH32aSd%2FQ%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/b49bf0eee7c5490fafbb9b231650bc3a~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=JwADdO7TJtnV%2Bm6hVlRseyE7nu0%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a0fc1b4294f04d608ff5ff6f14998154~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=LaFcpVtSPFPqwS3qBd%2FReIxADRk%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/31ca5218a0d441eba25a30178f912ca2~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=VnycXbcK5QX5AkPnnpQTdpVK19Y%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/18e0a38b220b453792e2db6b6e4f414e~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=ZiZ%2FTaA3uDUnMsiCfgwmAGDP%2BnU%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/0f435b09210b47e59d0785e76a96fef5~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=VPeIOO02suk%2BmfKtAw3R19muXfM%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/f49166f868274f8ebf1969cda33debf5~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=Xbosq%2BbYHjhRw7c3q1ls0xz7nhU%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/1df4ace4024c4fba86cc6e82c7d0a3f6~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=uRhSBaFaKwLeAEaE88ujwXzV5UQ%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/8f45735fb137478cbec5d8f10d3393ef~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=VJRJYQDikpu1mCl07L8PlavaVbc%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/402431d8ea1440ca84153eaf095beda6~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=ZLCZRdQpt%2BxdIPdvuC279DwQwus%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/b85b559be36941b0bf2ba206b465f8f3~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=tDKFl73sB1H34e3TwMPT0w1HovA%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/cfdea4360f004a589f7ca8716178ed7e~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=OtEjkTKZO7ZcOiyMbbQt%2FJlaixs%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/4511160a6fce4490a714476d30216039~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=BOsGFnO7YkAwig4jAJ7ASUJmA1M%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/ea626492b12343ed8c81f9676cb973e8~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=jjf12va8aHg9V6aWdpWOCVq%2Fl4Q%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a3523334cef64b25b4d8e85327a47b66~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=TaJ%2F2vBUwyPKBInizlCOKU%2FBR5E%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/6b2935570a6b409b928f1543829c29e1~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=eWvwiE2vzFrKQ5Zjk2ExY2eFcUo%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/d51fedc9c2464b15bb39e17567914aa7~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=SQgIPrHifFkcsO3ILoXqcAX9f9U%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/1fff8c1f23824ed49916c8327c76b5c6~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=na52oewWzAOyHtQZsBLgKmOQ%2FtE%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a83df42333174bbdbcb3aaec484f07ab~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=Qo9M49XybI%2FOdnS7H2zH9zqTEUo%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/66597ce62cf143b089ed9fbe078c5fbc~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=DFVgaBge3wCzZzDaQSpszLoEkO4%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/3173c6e7cf9147bf91638293074d33ba~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=90ialGt4xofMEeNYAQ6FAC03xtA%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/08c9b55386a34411b0329d52dd5e4041~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=ub688KqJGLAIkZk%2FnTGPTotbaL8%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/26f43aa82f524bf685deaec748955d83~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=%2Bv62fZtd82sIKxa5TVZTrBfmuUs%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/ff37ecc0120d44e68fe96ff876cdb5b2~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=lva9Um9OG2V%2B9uaCiAaK9zUdDMk%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/12a9a15d90554eeebc5aaeb71eda75fa~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=Sr4mzkwue9bZjMjc22EfAb5aZo8%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/3b430479b37345869c16830ca6ac0952~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=mSwDZhvsn5kkpEEfJFfVbGQXJnU%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/97bcc733b4f940e09aa33b33d0818d32~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=LtlbR2qhIMwEAfl%2B%2FqDes3TzDbs%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/300e2f939f804465b6e347e2e205d654~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=cbnmSt0jllfv5TRaUIHFcTQaMWA%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/cc7d1a98c38f4e18b86c95f1af942347~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=9tu84kdPAB8ZF5WZ%2FwRM%2BzDZnoE%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/d6d8deafa50a43b7aa808bc35c81c481~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=9wOoobgW%2FRWLiekj67u6YTNrD9w%3D","https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/ac9c2a6e5126450ebea9123331a0e463~tplv-tt-origin-web:gif.jpeg?_iz=58558\u0026amp;from=article.pc_detail\u0026amp;lk3s=953192f4\u0026amp;x-expires=1736268645\u0026amp;x-signature=rmnWPntDyGKk7laqDTUlP4H3Rs8%3D"],
+        "author": {
+            "@type": "Person",
+            "description": "Viva La Vida",
+            "email": "https://tomhutao.asia/",
+            "image": "https://icutaotao122.github.io/icons/apple-touch-icon.png",
+            "url": "https://tomhutao.netlify.app/",
+            "name": "书书福福悦读"
+        },
+        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
+        "publisher": {
+            "@type": "Organization",
+            "name": "今日事，今日毕",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://icutaotao122.github.io/icons/apple-touch-icon.png"
+            },
+            "url": "https://icutaotao122.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://icutaotao122.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+    
+
+
+
+<meta property="og:title" content="底层逻辑：金字塔思维" />
+<meta property="og:description" content="花半秒钟就看透事物本质的人，和花一辈子都看不清事物本质的人，注定是截然不同的命运。 人与人之间的差距，本质在于思维。思维决定行为，行为决定人生。如果你思维清晰，你就能高瞻远瞩，透过现象看到本质，把握现在……" />
+<meta property="og:url" content="https://icutaotao122.github.io/posts/%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E9%87%91%E5%AD%97%E5%A1%94%E6%80%9D%E7%BB%B4/" />
+<meta property="og:site_name" content="今日事，今日毕" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://p3-sign.toutiaoimg.com/tos-cn-i-axegupay5k/a89ca6917e004027966f3a11b3184819~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;amp;from=article.pc_detail&amp;amp;lk3s=953192f4&amp;amp;x-expires=1736268645&amp;amp;x-signature=LzqtgZbdTsSiZREUrMjJlm0VFrE%3D" />
+<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2024-12-22T00:46:44&#43;08:00" />
+    <meta property="article:modified_time" content="2025-01-01T01:22:02&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+    
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">今日事，今日毕</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon home"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg><span class="menu-item-name">首页</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/archives/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">归档</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/categories/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon th"><path d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"/></svg><span class="menu-item-name">分类</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+            
+                <li class="menu-item search-item">
+                        <form id="search" class="search" role="search">
+    <label for="search-input"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon search-icon"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></label>
+    <input type="search" id="search-input" class="search-input">
+</form>
+
+<template id="search-result" hidden>
+    <article class="content post">
+        <h2 class="post-title"><a class="summary-title-link"></a></h2>
+        <summary class="summary"></summary>
+        <div class="read-more-container">
+            <a class="read-more-link">阅读更多 »</a>
+        </div>
+    </article>
+</template>
+
+                    </li>
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title p-name">底层逻辑：金字塔思维</h1>
+
+            
+
+            
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+        
+        <time datetime="2024-12-22T00:46:44&#43;08:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2024.12.22</time>
+    
+    
+        
+        <time datetime="2025-01-01T01:22:02&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2025.1.1</time>
+    
+    
+    
+        
+        
+        
+            
+                <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="/categories/%E7%BB%93%E6%9E%84%E6%80%A7%E6%80%9D%E7%BB%B4/" class="category-link p-category">结构性思维</a></span>
+            
+        
+    
+    
+        
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;12051</span>
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;25&nbsp;分钟</span>
+    
+    
+        
+            
+            <span class="post-meta-item busuanzi-page-pv" id="busuanzi_container_page_pv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon post-meta-icon"><path d="M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z"/></svg>&nbsp;<span id="busuanzi_value_page_pv"></span></span>
+        
+    
+    
+</div>
+
+            
+
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:为什么要用金字塔结构why" href="#为什么要用金字塔结构why">为什么要用金字塔结构——why</a></li>
+    <li><a id="contents:金字塔内部结构what" href="#金字塔内部结构what">金字塔内部结构——what</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a id="contents:纵向父子关系疑问回答式对话" href="#纵向父子关系疑问回答式对话">纵向（父子）关系——疑问/回答式对话</a></li>
+            <li><a id="contents:横向兄弟关系归纳演绎" href="#横向兄弟关系归纳演绎">横向（兄弟）关系——归纳/演绎</a></li>
+            <li><a id="contents:序言的讲故事结构" href="#序言的讲故事结构">序言的讲故事结构</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a id="contents:如何搭建金字塔how" href="#如何搭建金字塔how">如何搭建金字塔——how</a>
+      <ol>
+        <li><a id="contents:自上而下法" href="#自上而下法">自上而下法</a></li>
+        <li><a id="contents:自下而上法" href="#自下而上法">自下而上法</a></li>
+        <li><a id="contents:序言的写法" href="#序言的写法">序言的写法</a></li>
+        <li><a id="contents:初学者注意事项" href="#初学者注意事项">初学者注意事项</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a id="contents:明确逻辑顺序归纳分组逻辑递进" href="#明确逻辑顺序归纳分组逻辑递进">明确逻辑顺序——归纳分组、逻辑递进</a>
+      <ol>
+        <li><a id="contents:演绎推理" href="#演绎推理">演绎推理</a></li>
+        <li><a id="contents:归纳推理" href="#归纳推理">归纳推理</a></li>
+        <li><a id="contents:演绎与归纳的区别" href="#演绎与归纳的区别">演绎与归纳的区别</a>
+          <ol>
+            <li><a id="contents:分组的mece原则" href="#分组的mece原则">分组的MECE原则</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a id="contents:概括各组思想结论先行以上统下" href="#概括各组思想结论先行以上统下">概括各组思想——结论先行、以上统下</a>
+      <ol>
+        <li><a id="contents:如何概括思想" href="#如何概括思想">如何概括思想？</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a id="contents:界定问题" href="#界定问题">界定问题</a></li>
+    <li><a id="contents:结构化分析问题" href="#结构化分析问题">结构化分析问题</a></li>
+  </ol>
+
+  <ol>
+    <li><a id="contents:书面表达" href="#书面表达">书面表达</a>
+      <ol>
+        <li><a id="contents:上下文之间要有过渡" href="#上下文之间要有过渡">上下文之间要有过渡</a></li>
+        <li><a id="contents:标题反映思想分组" href="#标题反映思想分组">标题反映思想分组</a></li>
+      </ol>
+    </li>
+    <li><a id="contents:ppt演示" href="#ppt演示">PPT演示</a></li>
+  </ol>
+</nav><div class="post-body e-content">
+                <p><strong>花半秒钟就看透事物本质的人，和花一辈子都看不清事物本质的人，注定是截然不同的命运</strong>。</p>
+<p>人与人之间的差距，本质在于思维。思维决定行为，行为决定人生。如果你思维清晰，你就能高瞻远瞩，透过现象看到本质，把握现在，选择未来。如果你思维混乱，那么你就会陷于目光短浅，遇事没有先见之明。</p>
+<p>因此，掌握清晰的思维对每个人而言都有十分重要的意义。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-axegupay5k/a89ca6917e004027966f3a11b3184819~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=LzqtgZbdTsSiZREUrMjJlm0VFrE%3D" alt=""></p>
+<p><strong>金字塔思维是大脑底层的逻辑规律，属于一项认知技能</strong>。它提供了一套方法论，帮助我们迅速厘清思路，将零散的观点有序组织起来，化繁为简，达到‘<strong>观点鲜明、重点突出、逻辑清晰、层次分明、简单易懂</strong>’的效果。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/adb7edaecc9b49bc8b8635dc0aad668f~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=NW53KGNTHF8VHFZZQQt2VJAXRjs%3D" alt=""></p>
+<p>简言之，金字塔思维能提高思维的逻辑性、条理性，确保我们能够准确高效地阐述自己的思想，提升沟通表达的效率和效果。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/64196a8dde2e440890ba7eb4b597a9ea~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=h8LSaN%2BVC2d37VHf47mBJ4XDwGk%3D" alt=""></p>
+<blockquote>
+<p><strong>深入思考</strong>：提高结构化思维能力，促进左右脑开发，找到问题的关键，将复杂的问题变得简单。</p>
+<p><strong>解决问题</strong>：透过现象看到本质，直击要点，制定严谨合理的解决方案，突破瓶颈。</p>
+<p><strong>项目管理</strong>：明确目标，制定行动计划，考虑全面、周到、严谨，分配任务、设计流程不重叠无遗漏。</p>
+<p><strong>口语表达</strong>：说话、演讲、讨论时，回答受众最常见4类问题：“是什么？为什么？如何做？好不好？”清晰呈现自己的观点，说服听众，与上级、同事、客户迅速建立共识，高效沟通。</p>
+<p><strong>书面写作</strong>：降低写作难度，缩短写作时间，减少修改次数。会挖掘读者的关注点、兴趣点、利益点，写出重点突出、条理清晰、简明扼要的策划方案、分析报告、精彩文案，让人愿意看、看得懂、记得住。</p>
+</blockquote>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/61a6ba6f9d364548b24270d024a71e89~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=ztY6MtJ%2BwCRPiOVq1JUmvo2GAas%3D" alt=""></p>
+<p>当然，我们也可以认为<strong>金字塔思维是一种重点突出、逻辑清晰、层次分明、简单易懂的思考方式、沟通方法或规范动作</strong>。</p>
+<p>学习金字塔思维有助于提升我们思考、分析、表达、管理等方面的能力，对于个人发展与成长具有十分积极促进的作用。</p>
+<p>（<strong>提示</strong>：金字塔思维属于认知技能，是一种立体化思维。<strong>读得懂是一回事，应用又是一回事，真正掌握又是另一回事</strong>！——技能的掌握需要靠大量练习，练才能熟，熟才能巧，如此才能算掌握）</p>
+<hr>
+<p>本文逻辑</p>
+<p>建构的逻辑</p>
+<p>思考的逻辑</p>
+<p>解决问题的逻辑</p>
+<p>表达的逻辑</p>
+<hr>
+<p><img src="https://p26-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a8e83d82d3014f028df1c8f6b15e619c~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=Caca%2FiJN%2FykL%2FdIUKf5%2FZ1uEQtw%3D" alt=""></p>
+<h1 id="建构的逻辑"><a href="#建构的逻辑" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:建构的逻辑" class="headings">建构的逻辑</a></h1>
+<p><strong>清晰表达的顺序是先提出总结性思想，再提出被总结的具体思想</strong>。</p>
+<p>读者很容易理解这种先总结后具体的思想表达顺序：先了解主要的、抽象的思想，再了解次要的、为主要思想提供支持的思想。</p>
+<h2 id="为什么要用金字塔结构why"><a href="#为什么要用金字塔结构why" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:为什么要用金字塔结构why" class="headings">为什么要用金字塔结构——why</a></h2>
+<p><strong>金字塔结构符合大脑思维的基本规律</strong>。大脑会自动将接收到的信息按照金字塔结构进行归类分组和总结概括，以便于理解和记忆。</p>
+<p>可以说，我们大脑理解的过程就是一个组建金字塔结构的过程。</p>
+<p><strong>我们大脑一次能够理解的思想或信息的数量是有限的。大脑的短期记忆没办法一次性记忆超过7个以上的项目</strong>。</p>
+<p>大脑比较容易记住3个，当项目超过4个时，大脑就会开始按照某种秩序自动将信息进行归类和分组。而金字塔结构刚好可以将所有输入的信息联系起来。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/f0cf1335c8594f24a0df88a4416b5fc9~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=Yyp5uw3Vsr12rd4%2Bqor1v%2FyIbwk%3D" alt=""></p>
+<p>简言之，我们的大脑偏爱清晰、简单、有逻辑性、结构化的信息，按照金字塔结构组成的信息更容易被大脑理解和记忆。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a42c4dce46724bb49e06c400f9abd2a5~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=VTuk%2FyRbP%2FjrkgzoQHXc8XW45bc%3D" alt=""></p>
+<p>因此，<strong>如果作者传达给读者的信息已经事先进行了归类和概括，并且按照金字塔结构自上而下的顺序呈现，读者就能更容易理解作者表达的思想</strong>。</p>
+<h2 id="金字塔内部结构what"><a href="#金字塔内部结构what" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:金字塔内部结构what" class="headings">金字塔内部结构——what</a></h2>
+<p><strong>金字塔的基本结构是：结论先行，以上统下，归纳分组，逻辑递进。先重要后次要，先总结后具体，先框架后细节，先结论后原因，先结果后过程，先论点后论据</strong>。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/1429f61b25b743a8b221f14dac9d49d3~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=3tvvlTqVUz1%2BUpU4eZG5EQbuEeY%3D" alt=""></p>
+<p><strong>读者很容易理解用金字塔结构组织的思想：先从金字塔的最顶端开始，沿各个分支向下展开</strong>。</p>
+<p>首先表达的主要思想，会使读者对表达者的观点产生某种疑问，而主要思想的下一层次的思想将回答这些疑问。通过不断进行<strong>疑问/回答式</strong>的对话，读者就可以了解文章的全部思想。</p>
+<p><strong>在金字塔结构中，思想以3种方式互相关联——向上、向下和横向</strong>，即思想之间的联系可以是纵向的，也可以是横向的。但是<strong>位于一组思想的上一层次的思想必须是对这一组思想的总结概括，这一组思想则是对其上一层次思想的解释支持</strong>。</p>
+<p>简言之，<strong>金字塔结构中的思想必须符合以下规则</strong>：</p>
+<ul>
+<li>**1.纵向：**任一层次上的思想必须是其下一层次思想的总结概括。</li>
+<li>**2.横向：**每组中的思想必须属于同一逻辑范畴。</li>
+<li>**3.横向：**每组中的思想必须按逻辑顺序组织。</li>
+</ul>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/89a173b1ff77407380bed00adec21d61~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=ZRMR8U6FYdAPpPsB7%2B7FsSEIzgM%3D" alt=""></p>
+<p>为了便于理解，我们将金字塔结构解构为3种子结构：</p>
+<ul>
+<li>1.<strong>主题与子主题之间的纵向关系</strong>。</li>
+<li>2.<strong>子主题与子主题之间的横向关系</strong>。</li>
+<li>3.<strong>序言的讲故事结构</strong>。</li>
+</ul>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/990d3394bc8244679e7caebace66bceb~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=Mjx74IhkX%2BXnCqFqeJLSekzIai8%3D" alt=""></p>
+<h4 id="纵向父子关系疑问回答式对话"><a href="#纵向父子关系疑问回答式对话" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:纵向父子关系疑问回答式对话" class="headings">纵向（父子）关系——疑问/回答式对话</a></h4>
+<p><strong>纵向关系遵循结论先行，以上统下</strong>。文章中任何一层次上的思想必须是其下一层次思想的总结概括，而这一层次的思想又为上一层次思想提供解释支持。</p>
+<p><strong>纵向联系能够很好地吸引读者的注意力，因为疑问/回答式反应是人类的一种自然反应</strong>。作者可以通过不断地引导一种疑问/回答式的对话，迫使读者按照作者的思路产生符合逻辑的反应，直到读者了解作者的全部思想为止。</p>
+<p>读者能很容易理解这种自上而下的表达方式：先从金字塔的最顶端开始，沿着各个分支向下展开。首先了解表达的主要思想，然后读者会对主要思想产生某种疑问，而主要思想的下一层次的思想将回答这些疑问。通过不断的<strong>疑问/回答式</strong>对话，读者就可以了解作者的全部思想。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/0ed5612041304e4eaf429f85bb60c3c8~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=qhSnqYKLQryJjvlLteis76qwuf8%3D" alt=""></p>
+<p>但为了保证这种“引起读者疑问并回答疑问”方式的进行，<strong>你必须保证对话内容与读者存在相关性，即你必须能直接回答读者头脑中已存在的问题。</strong></p>
+<p><strong>人只有在需要了解问题的答案时才会去寻找答案</strong>。因此，你必须使对话能直接回答你所发现读者头脑中已有的问题。</p>
+<p>其次，为了吸引读者的全部注意力，你必须在做好回答问题的准备之前，避免引起读者的疑问；同时也须在引起读者疑问之前，避免先给出对该问题的答案。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/21a2b2b19f1845959be992c9d2bb51e4~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=KHgmwgk3hOc2thWNaF9fZxgIvkY%3D" alt=""></p>
+<h4 id="横向兄弟关系归纳演绎"><a href="#横向兄弟关系归纳演绎" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:横向兄弟关系归纳演绎" class="headings">横向（兄弟）关系——归纳/演绎</a></h4>
+<p><strong>横向关系遵循归类分组，逻辑递进。横向层次除了要为其上一层次思想提供解释支持外，还须保证这一层次上的每组中的思想必须属于同一逻辑范畴，且每组中的思想必须按逻辑顺序组织</strong>。</p>
+<p>当上一层次阐述了某个思想，就会引发读者提出关于这个思想的疑问，而这一层次上，也就是横向上必须保证回答读者心中的关于这个思想的疑问，同时还必须保证表达符合逻辑。而<strong>大脑的底层逻辑思维仅有演绎推理和归纳推理两种逻辑关系</strong>。</p>
+<p>也就是说，<strong>横向联系上必须具有明确的演绎或归纳关系，但不可能同时既具有演绎关系，又具有归纳关系</strong>。</p>
+<p>演绎推理的逻辑形式：</p>
+<p><strong>大前提——小前提——结论</strong></p>
+<blockquote>
+<p>例如经典三段论：</p>
+<ul>
+<li><strong>大前提</strong>：所有人都会死</li>
+<li><strong>小前提</strong>：苏格拉底是一个人</li>
+<li><strong>结论</strong>：苏格拉底会死</li>
+</ul>
+<p>因为苏格拉底是一个人，所以苏格拉底会死。</p>
+</blockquote>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/ae108a7dc3384bb2aa74ea8df9d04a67~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=bl1c7JC2aFWPh8d%2Fn25hQC5F5%2Bk%3D" alt=""></p>
+<p>归纳推理的逻辑形式：</p>
+<p><strong>S1是B，S2是B，S3是B，结论：S是B。（假如S由S1、S2、S3组成）</strong></p>
+<blockquote>
+<p>例如平面三角形内角和：</p>
+<ul>
+<li>直角三角形内角和是180度</li>
+<li>锐角三角形内角和是180度</li>
+<li>钝角三角形内角和是180读</li>
+</ul>
+<p>所以平面内的一切三角形内角和都是180度。</p>
+</blockquote>
+<p>**演绎推理只具有演绎顺序。归纳推理具有时间顺序、结构顺序和重要性顺序。**这四种顺序是大脑进行分析活动时仅有的四种逻辑顺序：演绎推理，发现因果（时间），化整为零（结构）和归纳总结（程度）。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/1483d15971d047748e8e7da3ed31236c~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=Si17RXoPAAUS2dJjUrJm7aAssxw%3D" alt=""></p>
+<h4 id="序言的讲故事结构"><a href="#序言的讲故事结构" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:序言的讲故事结构" class="headings">序言的讲故事结构</a></h4>
+<p><strong>序言的主要作用是在没有提出中心思想之前，用来提醒读者关心一个问题，从而激发他的兴趣，而这个问题的答案就是你要表达的中心思想</strong>。</p>
+<p>在正式展开<strong>疑问/回答式</strong>对话之前，你必须先吸引读者的注意力，否则无法推进交流的深入。</p>
+<p><strong>读者有选择的权力，只有读者感兴趣，愿意看，你才有机会表达出自己的观点</strong>。如果读者一开始就拒绝了你，那么交流还没正式开始就已经结束了，你也无法展开你想要讨论的主题。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c0a74f979b8d4205bf7b9550726f7c92~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=iq%2FAWT1qLqloGqEpiwxPQhyoCXE%3D" alt=""></p>
+<p><strong>序言以讲故事的形式展开，能很好地吸引读者的注意力</strong>。因为故事本身具有悬念的效果，而悬念能激发读者的兴趣。</p>
+<p><strong>故事的四要素：背景、冲突、疑问和答案</strong>。序言应当先介绍读者熟悉的某些‘<strong>背景</strong>’，说明发生的‘<strong>冲突</strong>’，并由此引发读者的‘<strong>疑问</strong>’，然后针对该‘<strong>疑问</strong>’给出‘<strong>答案</strong>’，而整篇文章的目的就是在回答该‘<strong>疑问</strong>’。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/54eb3f1c0601450693cec479fa98484d~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=O%2FIyvkgrkL9xuruvm4iY73VfJNk%3D" alt=""></p>
+<p><strong>纵向的疑问/回答式对话、横向的演绎或归纳、序言的讲故事共同构成了完整的金字塔结构</strong>。通过3种子结构，你能随时找到自己想要了解的思想。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/0c9c94390f1a49e68d5c2d163a0a20f2~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=nlzGvp3hD8O3XFTLbQgLbdN6nww%3D" alt=""></p>
+<h2 id="如何搭建金字塔how"><a href="#如何搭建金字塔how" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:如何搭建金字塔how" class="headings">如何搭建金字塔——how</a></h2>
+<p><strong>搭建金字塔结构的具体做法是：自上而下表达，自下而上思考，纵向总结概括，横向归类分组，序言讲故事，标题提炼思想精华</strong>。</p>
+<p>当你有明确的主题时，可以采取自上而下法搭建金字塔结构。</p>
+<p>当你还无法确认主题，或还未想清楚读者头脑中的问题时，可以采取自下而上法构建金字塔结构。</p>
+<h3 id="自上而下法"><a href="#自上而下法" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:自上而下法" class="headings">自上而下法</a></h3>
+<p>首先，我们必须明确金字塔结构中的思想必须符合以下3个规则：</p>
+<ul>
+<li>1.任一层次上的思想必须是其下一层次思想的总结概括。</li>
+<li>2.每组中的思想必须属于同一逻辑范畴。</li>
+<li>3.每组中的思想必须按逻辑顺序组织。</li>
+</ul>
+<p>其次，我们需要了解<strong>金字塔的基本结构是：结论先行，以上统下，归纳分组，逻辑递进。先重要后次要，先总结后具体，先框架后细节，先结论后原因，先结果后过程，先论点后论据</strong>。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/9a813e5129a3457182df4150dd60c7e0~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=MYVFHQNynb83lGIttuORs8EDLx8%3D" alt=""></p>
+<p>然后，<strong>我们需要明确自己的主题</strong>。主题诞生于目标中，而<strong>表达的目的无非是让读者接受我们所传达的思想</strong>。因此，我们必须要基于目标定主题，学会以读者为中心，把握读者的需求点、利益点、兴趣点和关注点。</p>
+<p><strong>只有读者愿意听、愿意看，你的文章才有机会发生作用</strong>。读者是决策者，你是服务者，读者有选择的权力，可以选择‘看’，也可以选择‘不看’。</p>
+<p>因此‘<strong>想清楚、说明白，知道说什么，怎么说</strong>’十分关键，读者想听什么，我们就必须说什么；读者想怎么听，我们就必须怎么说。</p>
+<p><strong>要先投其所好，后引导；先迎合，后打动</strong>，方能达到我们的目的，否则读者一开始就拒绝我们，那么也就谈不上实现目标了。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/bfcbbb58cccd4de88d6bd70da9b66a18~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=pPar47xn1O5n8%2F7fcjV1PcPq0wM%3D" alt=""></p>
+<p>有了明确的主题之后，我们就可以开始自上而下地搭建金字塔结构，具体可以分为5个步骤：</p>
+<blockquote>
+<p><strong>1.提出主题思想（先设定场景——确定目标——明确主题）</strong></p>
+<ul>
+<li>场景越具体，内容就越详细，目标也越准确，主题也就越明确。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>2.设想受众的主要疑问</strong></p>
+</blockquote>
+<blockquote>
+<ul>
+<li>确定表达的对象，想清楚要解决表达的对象大脑中存在的什么问题。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>3.写序言：背景—冲突—疑问—答案</strong></p>
+<ul>
+<li>先介绍读者熟悉的某些‘<strong>背景</strong>‘，说明发生的’<strong>冲突</strong>‘，并由此引发读者头脑早已存在的’<strong>疑问</strong>‘，然后针对该’<strong>疑问</strong>‘给出’<strong>答案</strong>‘。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>4.与受众进行疑问/回答式对话</strong></p>
+<ul>
+<li>上一层次的回答必会引发出新疑问，而这一层次——即横向上，要用演绎推理或归纳推理回答读者的新疑问。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>5.对受众的新疑问，重复进行疑问/回答式对话</strong></p>
+</blockquote>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/b17d3a2ea01e4671b63352d6e043271a~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=IZ5KZmTVzdCLWUGLQFVnjUwHX1Y%3D" alt=""></p>
+<h3 id="自下而上法"><a href="#自下而上法" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:自下而上法" class="headings">自下而上法</a></h3>
+<p>当我们思维混乱，无法确认自己的主题时，可以从关键句层次开始，先组织思想，然后自下而上地构建金字塔结构。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/02f965cf4fb34d43acb0449c02aac9fe~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=0s1ENCFxCiDWElodcn82d1C%2BLfg%3D" alt=""></p>
+<p><strong>自下而上构建金字塔的三个步骤：</strong></p>
+<ul>
+<li><strong>1.收集信息，列出所有思想要点</strong>。</li>
+<li><strong>2.找出关系，寻找各要点之间的逻辑关系，归类分组，形成结构</strong>。</li>
+<li><strong>3.得出结论，总结概括，提炼思想精华</strong>。</li>
+</ul>
+<p><img src="https://p26-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/8d480f1642b24178887b5ef1f9ba0877~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=7yR7yL3P8r1w%2FLUsP1iuoG8p1PM%3D" alt=""></p>
+<p>通常，<strong>自上而下的方法比自下而上的方法更容易，因此，你应当先尝试用自上而下的方法搭建金字塔结构</strong>。</p>
+<p>但是，从思维发展角度看，<strong>先发散，后总结，更容易找到逻辑框架，因此，采用自下而上法更容易培养金字塔思维</strong>。</p>
+<p>在实际应用中，两种方法并不冲突，经常同时使用。<strong>在自上而下地搭建结构时，同时也在自下而上地完善结构；在自下而上地构建结构时，同时也在自上而下地检验结构。两种方法共同组成了一套完整的金字塔搭建方法。</strong></p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/175f406970f04538b5f9ba8c986d4bc1~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=FJcdm5Bo4vbm2olBES0R8GjzRec%3D" alt=""></p>
+<h3 id="序言的写法"><a href="#序言的写法" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:序言的写法" class="headings">序言的写法</a></h3>
+<p><strong>好的序言不仅能吸引并保持读者的注意力，还能够影响读者对文章的理解</strong>。</p>
+<p><strong>序言的位置在中心思想的上面，可理解为是一种引出中心思想的‘开场白’。其主要作用是在没有提出中心思想之前，用问题来引导读者，从而激发他的兴趣，而这个问题的答案就是你要表达的中心思想</strong>。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/6a2e22454bb34d32816643566d331996~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=lzclJApQkQKF8anw6jWAHlN2l8E%3D" alt=""></p>
+<p><strong>序言要用讲故事的形式</strong>，应当先向读者介绍熟悉的‘<strong>背景</strong>’，说明发生的‘<strong>冲突</strong>’，并由此引发读者的‘<strong>疑问</strong>’，然后针对该‘<strong>疑问</strong>’给出‘<strong>答案</strong>’，而整篇文章的目的就是在回答该‘<strong>疑问</strong>’。</p>
+<p>一方面，<strong>故事能很好地吸引读者的注意力，激发他们的兴趣，从而专注于你的话题</strong>。读者只有在感受到强烈吸引力时，才会暂时抛开复杂的思想，专注于你提供的信息。</p>
+<p>相信你有过这种经历：读完了某篇文章，却忽然发现自己其实一个字也没看进去，这就是因为我们并没有抛开自己头脑中原有的其他思想。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/d4597198366949b09ec44f29abef2ea7~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=GcTB8pF%2BPQlVJzoUdV%2BfUnQwpjU%3D" alt=""></p>
+<p>另一方面<strong>讲故事的方式能确保读者的思维能与你的思维处于‘同一频道’</strong>。沟通中经常存在的问题是双方根本不在同一频道，于是经常出现牛头不对马嘴的场面。</p>
+<p><strong>从心理学角度看，先向读者传递简单易懂、容易接受的信息，比让他们在混乱的思想中摸索，更容易接受全篇的思想，而故事刚好符合这一点。</strong></p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a7dd43a2c5e640bd83cd60f1c904dff3~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=xUU4C4%2B1yCFgfaQmIskkzWcEs0c%3D" alt=""></p>
+<p>序言包含四要素:<strong>背景（S）、冲突（C）、疑问（Q）和答案（A）</strong>。</p>
+<ul>
+<li><strong>背景（S）</strong>：与文章主题有关，是关于主题的公认事实（也可以说是读者已经认可的内容）。</li>
+<li><strong>冲突（C）</strong>：是推动情节发展并引发读者提出疑问（Q）的因素。</li>
+<li><strong>疑问（Q）</strong>：是你设想到读者头脑中已有的问题（Q）。</li>
+<li><strong>答案（A）</strong>：是你想要表达的中心思想。</li>
+</ul>
+<p>按照“<strong>背景（S）—冲突（C）—疑问（Q）—答案（A）</strong>”顺序的不同，序言有4种风格。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/bdaebdf585424e858f2cf216c13edbe3~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=O0uMoRN%2BfAK7uZ%2BCHsB%2B54T8tsY%3D" alt=""></p>
+<p>在没有特殊需求的情况下，建议<strong>序言还是采用标准式</strong>，因为标准式在沟通中有个优势：<strong>开场先说容易被认同的事情，沟通起来会比较顺畅——事实是最没争议，不会引起质疑和反感的内容。如果一上来就说“冲突”，沟通的两人之间可能还没正式进入主题就真出现了&quot;冲突&quot;</strong>。</p>
+<p><strong>写好序言的原则</strong>：</p>
+<ul>
+<li>
+<p><strong>1.序言的目的是“提示”读者而不是“告诉”读者某些信息。</strong></p>
+</li>
+<li>
+<p><strong>2.序言必须包含“背景（S）、冲突（C）、答案（A）”三项要素。</strong></p>
+</li>
+<li>
+<p><strong>3.序言的长度取决于读者和主题的需要</strong>。</p>
+</li>
+</ul>
+<p>序言的目的只是告诉读者一些他们已经知道的信息。因此，序言中仅涉及读者不会对其真实性产生质疑的内容。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/24f019170fff44249ece9bf3392bb1fb~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=HddsoqqCF%2BupGyPxXG%2FmW5hsrzU%3D" alt=""></p>
+<p><strong>注意</strong>：不要在序言中涉及任何读者不知道的信息，因为这些信息可能导致读者提出非你所愿的&quot;疑问&quot;。</p>
+<h3 id="初学者注意事项"><a href="#初学者注意事项" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:初学者注意事项" class="headings">初学者注意事项</a></h3>
+<p>无论采用自上而下法，还是自下而上法搭建金字塔结构，都可能遇到众多问题，因此，以下建议将有助于你尽快掌握金字塔结构的构建。</p>
+<ul>
+<li>1.<strong>一定先尝试自上而下法搭结构</strong>。</li>
+<li>2.<strong>将背景作为序言的起点</strong>。</li>
+<li>3.<strong>不要省略对序言的思考</strong>。</li>
+<li>4.<strong>将历史背景放在序言中</strong>。</li>
+<li>5.<strong>序言仅涉及读者不会对其真实性提出质疑的内容</strong>。</li>
+<li>6.<strong>在关键句层次，更宜选择归纳推理而非演绎推理</strong>。</li>
+</ul>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/0292fc9d73654bb6bcac64bdbf4f80c6~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=gSfTPCGDL2ZgNPi3NnCz1i3ZSDo%3D" alt=""></p>
+<hr>
+<p>完整金字塔结构</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/6c406600f00e4852970d5ad014c5fb11~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=vit7JFr9tvyCr3Oqwt%2FbM0FksKo%3D" alt=""></p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a89118ba3118465d9a51e6545c65e06a~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=a3fvhNoatmWtriWbhGcXyGDuRQg%3D" alt=""></p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/eb3c8fa1040642d7b8e5fd4049ff152e~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=tKfBsUCBXdUyii0DCMCODUVyohE%3D" alt=""></p>
+<hr>
+<h1 id="思考的逻辑"><a href="#思考的逻辑" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:思考的逻辑" class="headings">思考的逻辑</a></h1>
+<p>思考的过程既是构建金字塔的过程，同时也是在检验我们所搭建的结构是否合理。</p>
+<p>换句话说，思考的逻辑就是在应用金字塔思维。一方面我们在应用金字塔思维将想表达的思想组织成金字塔结构；另一方面我们也在应用金字塔思维检验我们表达的思想是否是以金字塔结构呈现。</p>
+<p>为了保证我们的思想是按金字塔结构组织，我们必须先<strong>找出思想之间存在的逻辑关系——即确认逻辑框架，并确定逻辑顺序(明确逻辑顺序)，然后概括总结出各组思想的隐含含义——即归纳跃进(概括各组思想)。</strong></p>
+<p>如此，我们表达的思想将会更清晰、明确、具体，读者也更容易理解、接受。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c541d57a4d054705bdedffb88fffcedc~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=rd3SmzZm%2Fl%2F%2BCshbZYdnEinwi8o%3D" alt=""></p>
+<h2 id="明确逻辑顺序归纳分组逻辑递进"><a href="#明确逻辑顺序归纳分组逻辑递进" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:明确逻辑顺序归纳分组逻辑递进" class="headings">明确逻辑顺序——归纳分组、逻辑递进</a></h2>
+<p><strong>按金字塔结构组织的思想必须符合4个基本原则：结论先行，以上统下，归类分组，逻辑递进</strong>。横向上遵循归类分组，逻辑递进；纵向上遵循结论先行，以上统下。</p>
+<p>换言之，金字塔中的思想以3种方式互相关联——向上、向下和横向。位于一组思想的上一个层次的思想必须是对这一组思想的总结概括，而这一组思想为上一层次思想提供解释支持。同一组中的思想必须属于同一逻辑范畴，且必须按逻辑顺序组织。而<strong>演绎推理和归纳推理是大脑底层思维仅有的两种逻辑关系</strong>。</p>
+<p><strong>演绎推理</strong>具有<strong>演绎顺序。归纳推理</strong>具有<strong>时间顺序、结构顺序</strong>和**重要性顺序。**因此，我们需要先了解演绎推理和归纳推理这两种底层逻辑思维，这有助于我们理清思路，条理清晰地表达思想。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/b5cb4462c2eb4db58625c4be9472dbaf~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=i5nEhYW%2BbmZRGgcQeu5EDWaXPTg%3D" alt=""></p>
+<h3 id="演绎推理"><a href="#演绎推理" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:演绎推理" class="headings">演绎推理</a></h3>
+<p><strong>演绎推理是一种线性推理方式，由一般到个别，从普遍到特殊</strong>。</p>
+<p>人倾向于按照思维发展的顺序表达自己的思想，而思维发展的顺序通常是演绎推理，因此绝大部分人的思考方式更习惯于演绎推理。比方解决问题的逻辑就是演绎推理。</p>
+<p>演绎推理有<strong>标准式</strong>和<strong>常见式</strong>两种形式。</p>
+<p><strong>标准式：大前提——小前提——结论</strong></p>
+<p>大前提就是世界上存在的一种现状，小前提是世界上存在的另一种现状，结论是当两种现状同时存在时得出的结果。以结论为主体，概括论证过程。</p>
+<blockquote>
+<p>例如经典三段论：</p>
+<ul>
+<li><strong>大前提</strong>：所有人都会死</li>
+<li><strong>小前提</strong>：苏格拉底是一个人</li>
+<li><strong>结论</strong>：苏格拉底会死</li>
+</ul>
+<p>因为苏格拉底是一个人，所以苏格拉底会死。</p>
+</blockquote>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/9ead09bd90b44550a132e46eed485a4b~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=hylC4%2FSjxyWuLCO8kKzKLRmMRQ0%3D" alt=""></p>
+<p><strong>常见式：问题——原因——解决方案</strong></p>
+<p>解决问题的逻辑就是演绎推理，包括三个步骤：</p>
+<ul>
+<li>第一步，发现问题，存在的问题或现象——<strong>界定问题</strong>；</li>
+<li>第二步，分析问题，产生问题的原因——<strong>结构化分析问题</strong>；</li>
+<li>第三步，解决问题，解决问题的方案——<strong>找到解决方案</strong>。</li>
+</ul>
+<blockquote>
+<p>例如：</p>
+<ul>
+<li><strong>问题</strong>：出门要不要带伞</li>
+<li><strong>原因</strong>：明天要下雨</li>
+<li><strong>解决方案</strong>：出门要带伞</li>
+</ul>
+</blockquote>
+<p><strong>演绎推理中，推理过程的第二思想必须是对第一个思想的主语或谓语的评述。如果不具有这一特点，它就不是演绎推理</strong>。</p>
+<p><strong>注意</strong>：’三段论‘要求两个前提必须都是正确的（大前提和小前提），只要其中有一个前提不真实或不完全真实，结论就会不正确。</p>
+<p>演绎推理是一种线性思维，因此只有一种逻辑顺序——演绎顺序。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c8f944e8be1c4354aa2ea30b3ae283cd~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=xGO8L1zlYcxoJkdU2WfH32aSd%2FQ%3D" alt=""></p>
+<h3 id="归纳推理"><a href="#归纳推理" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:归纳推理" class="headings">归纳推理</a></h3>
+<p><strong>归纳推理是从个别到一般，从特殊到普遍</strong>。</p>
+<p>归纳推理比演绎推理难得多，因为归纳推理需要<strong>创造性思维</strong>。进行归纳推理时，大脑首先要发现若干事物(事件、思想、事实)的共性，然后将其归类到同一组中，并说明其共性。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/b49bf0eee7c5490fafbb9b231650bc3a~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=JwADdO7TJtnV%2Bm6hVlRseyE7nu0%3D" alt=""></p>
+<p>因此，当我们<strong>使用归纳推理时，必须具备以下两项能力:</strong></p>
+<ul>
+<li>
+<p><strong>1.正确定义一组思想。找到一个能够表示该组所有思想共性的名词</strong>。</p>
+</li>
+<li>
+<p><strong>2.识别并剔除该组思想中与其他思想不相称、不属同类、无共同点的思想</strong>。</p>
+</li>
+</ul>
+<p>在归纳过程中，我们通常需要保持主语不变，改变谓语，或者保持谓语不变，改变主语，然后找出各句主语或谓语之间的相同点，并根据这一相同点得出结论。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a0fc1b4294f04d608ff5ff6f14998154~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=LaFcpVtSPFPqwS3qBd%2FReIxADRk%3D" alt=""></p>
+<p>归纳推理具有3种逻辑顺序：时间顺序、结构顺序和重要性顺序。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/31ca5218a0d441eba25a30178f912ca2~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=VnycXbcK5QX5AkPnnpQTdpVK19Y%3D" alt=""></p>
+<h3 id="演绎与归纳的区别"><a href="#演绎与归纳的区别" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:演绎与归纳的区别" class="headings">演绎与归纳的区别</a></h3>
+<p><strong>演绎推理是从普遍到特殊，一般到个别，得出的结论是必然结论。归纳推理是从特殊到普遍，个别到一般，得出的结论是不必然结论</strong>。</p>
+<p>演绎推理是根据<strong>规则—情况得到结果</strong>。归纳推理是根据<strong>情况—结果总结出规则</strong>。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/18e0a38b220b453792e2db6b6e4f414e~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=ZiZ%2FTaA3uDUnMsiCfgwmAGDP%2BnU%3D" alt=""></p>
+<p>当进行<strong>演绎推理</strong>时，推理过程的第二思想必须是对第一个思想的主语或谓语的评述。当进行<strong>归纳推理</strong>时，同组中的思想具有类似的主语或谓语。</p>
+<p><strong>演绎推理比归纳推理使用的更为频繁</strong>。人倾向于按照思维发展的顺序表达自己的思想，而思维发展的顺序通常是演绎推理。</p>
+<p>但是<strong>演绎推理比较笨拙、繁琐</strong>，必须从简单的思想推导出复杂的思想，逻辑链条过长，不利于保持读者的注意力，而且读者很容易分心，陷入到自我思想中去。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/0f435b09210b47e59d0785e76a96fef5~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=VPeIOO02suk%2BmfKtAw3R19muXfM%3D" alt=""></p>
+<p>另外，演绎推理的整个过程中，只要有一个论点存在异议，论证就很难继续向前推进，除非解决异议，或者将整个推理过程推倒重来。</p>
+<p>相反，<strong>归纳推理更简洁、清晰，更易于读者阅读和理解</strong>。因此，在表达上应尽量采用归纳法。</p>
+<p>而且在归纳推理的整个过程中，一个论点存在异议，并不影响其他论点的说服性，也不会阻碍整个论证的向前推进。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/f49166f868274f8ebf1969cda33debf5~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=Xbosq%2BbYHjhRw7c3q1ls0xz7nhU%3D" alt=""></p>
+<p>概言之，<strong>演绎推理更适合思考，归纳推理更适合表达</strong>。<strong>演绎推理</strong>不直接给出答案，需要读者主动寻找答案。它引导读者<strong>发散、想象</strong>和<strong>创造</strong>，具有<strong>启发性、创造性</strong>和<strong>说服性</strong>，但不利于记忆。</p>
+<p><strong>归纳推理</strong>能快速总结得出答案，<strong>观点清晰、明了，容易理解</strong>和<strong>记忆</strong>，但它束缚了思想，扼杀了想象力、创造力和发散力。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/1df4ace4024c4fba86cc6e82c7d0a3f6~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=uRhSBaFaKwLeAEaE88ujwXzV5UQ%3D" alt=""></p>
+<p><strong>演绎推理只有一种逻辑顺序——演绎顺序，而归纳推理具有3种逻辑顺序：时间顺序、结构顺序和重要性顺序</strong>。这4种顺序是大脑进行思维活动时中仅有的四种逻辑顺序。</p>
+<h4 id="分组的mece原则"><a href="#分组的mece原则" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:分组的mece原则" class="headings">分组的MECE原则</a></h4>
+<p>在金字塔结构中，横向层次上应遵循归类分组和逻辑递进两项基本原则。<strong>同一组中的思想必须具有明确的逻辑关系，要么是演绎关系，要么是归纳关系，但不可能同时具有这两种关系</strong>。</p>
+<p>如果该组中的思想是演绎关系，那么该组思想组织的顺序就是演绎顺序。如果该组中的思想是归纳关系，那么该组思想组织的顺序只可能是时间顺序、结构顺序、重要性顺序中的一种逻辑顺序。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/8f45735fb137478cbec5d8f10d3393ef~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=VJRJYQDikpu1mCl07L8PlavaVbc%3D" alt=""></p>
+<p>有时，横向上组织的思想容易出现遗漏，或不完全。因此，归类分组时需要遵循<strong>MECE原则——相互独立，完全穷尽。</strong></p>
+<blockquote>
+<p><strong>MECE原则，即“相互独立，完全穷尽”（Mutually Exclusive, Collectively Exhaustive），是一种结构化思维工具，可以确保在分析问题时做到不重叠、不遗漏</strong>。其核心思想是将一个整体划分为不同的部分时，必须保证这些部分既不重叠，也不遗漏。</p>
+<ul>
+<li><strong>相互独立（Mutually Exclusive ）</strong>：各部分之间相互独立，相互排斥，没有重叠。</li>
+<li><strong>完全穷尽（Collectively Exhaustive）</strong>：所有部分完全穷尽，没有遗漏。</li>
+</ul>
+</blockquote>
+<p><strong>MECE原则强调先分清再穷尽</strong>，这样不仅能使我们的思路更清晰，思维更缜密，而且确保了我们在归类分组时做到不重叠、不遗漏，从而保证了金字塔组织的思想的完整性。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/402431d8ea1440ca84153eaf095beda6~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=ZLCZRdQpt%2BxdIPdvuC279DwQwus%3D" alt=""></p>
+<p>总而言之，演绎推理和归纳推理两种思维方法既相互联系、相互补充，又互相区别、互为条件。一方面，<strong>归纳是演绎的基础</strong>；演绎从归纳结束的地方开始，<strong>演绎的一般知识来源于经验归纳的结果</strong>。因此没有归纳就没有演绎。</p>
+<p>另一方面，<strong>演绎是归纳的指导</strong>；归纳要从个别概括出一般，<strong>而作为对实际材料进行归纳的指导思想，往往又是某种演绎的结果</strong>。因此没有演绎也没有归纳。两者相互渗透，相互转化。</p>
+<p>但是，演绎推理和归纳推理都是根据过去的事物得出的结论，或者说以静止的事物作为参照。它们忽视了事物的变化以及事物与事物之间的联系，因此这两种思维方法都不完全，都存在漏洞。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/b85b559be36941b0bf2ba206b465f8f3~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=tDKFl73sB1H34e3TwMPT0w1HovA%3D" alt=""></p>
+<p><strong>金字塔思维是一种更高级的思维方式，它将一维的演绎推理和归纳推理融合在一起，构建成了立体化思维，同时考虑到事物的变化以及事物之间的联系</strong>，从而完善了思维，使之更缜密、更清晰。</p>
+<p>所以学习金字塔思维是训练大脑，提升思维能力的重要手段.</p>
+<h2 id="概括各组思想结论先行以上统下"><a href="#概括各组思想结论先行以上统下" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:概括各组思想结论先行以上统下" class="headings">概括各组思想——结论先行、以上统下</a></h2>
+<p>前面，我们已经在横向上确定了思想的逻辑关系和逻辑顺序——即归类分组和逻辑递进，现在我们需要在纵向上概括总结出各组思想的隐含含义——即保证结论先行、以上统下。</p>
+<p>根据金字塔的第一条规则：<strong>位于金字塔结构中每一层次上的思想，必须是对其下一个层次思想的概括总结</strong>。因此，纵向上应当提炼、概括思想精华。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/cfdea4360f004a589f7ca8716178ed7e~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=OtEjkTKZO7ZcOiyMbbQt%2FJlaixs%3D" alt=""></p>
+<p><strong>概括性的语句一方面能推动思维的发展，帮助我们发现自己的真实思想；</strong></p>
+<p><strong>另一方面可以增加文章的可读性，减少枯燥感</strong>，同时让读者能提前了解作者的行文思路，帮助其更快地理解作者想表达的思想。</p>
+<h3 id="如何概括思想"><a href="#如何概括思想" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:如何概括思想" class="headings">如何概括思想？</a></h3>
+<p><strong>概括各组思想需要避免使用’缺乏思想‘的句子。’缺乏思想‘的句子会掩盖思想不完整的事实，难以推动思维的发展</strong>。</p>
+<p>对读者而言，’缺乏思想‘的句子是枯燥无味的。它很难吸引并保持读者的注意力，无法激发读者继续阅读的欲望，而且读者也不容易理解你所表达的思想。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/4511160a6fce4490a714476d30216039~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=BOsGFnO7YkAwig4jAJ7ASUJmA1M%3D" alt=""></p>
+<p><strong>思想的表达方式可以是行动性语句——即告诉读者做什么事，也可以是描述性语句——即告诉读者关于某些事情的情况</strong>。</p>
+<blockquote>
+<ul>
+<li>
+<p><strong>概括行动性思想时，应说明采取行动后取得的’结果‘(效果、目标)。</strong></p>
+</li>
+<li>
+<p><strong>概括描述性思想时，应说明这些思想具有的’共同的含义‘。</strong></p>
+</li>
+</ul>
+</blockquote>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/ea626492b12343ed8c81f9676cb973e8~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=jjf12va8aHg9V6aWdpWOCVq%2Fl4Q%3D" alt=""></p>
+<p>一般读者更容易理解行动性思想，因此行动性思想的有效性强于描述性思想。</p>
+<p><strong>概括行动行思想的步骤</strong>：</p>
+<ul>
+<li>1.用明确的语句描述各行动、步骤、流程等。</li>
+<li>2.找出因果关系，区分抽象层次，将相同行动、步骤、流程进行合并。</li>
+<li>3.确保行动、步骤、流程之间遵循<strong>MECE原则（相互独立不重叠，完全穷尽无遗漏）</strong>。</li>
+<li>4.根据前面的行动、步骤、流程等，总结概括出导致的结果/目标(必须是完成各项行动后的结果，且措辞明确具体)</li>
+</ul>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a3523334cef64b25b4d8e85327a47b66~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=TaJ%2F2vBUwyPKBInizlCOKU%2FBR5E%3D" alt=""></p>
+<p><strong>概括描述性思想的步骤：</strong></p>
+<ul>
+<li>1.找出结构上的共性(针对同一类主语；针对同一类谓语；具有同一类隐含的思想)。</li>
+<li>2.寻找更密切的关系。</li>
+<li>3.完成归纳跃进(概括出主题思想)。</li>
+</ul>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/6b2935570a6b409b928f1543829c29e1~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=eWvwiE2vzFrKQ5Zjk2ExY2eFcUo%3D" alt=""></p>
+<p><strong>语言相对思想总是贫乏的</strong>。思考的逻辑不仅能帮助我们将思想组织成金字塔结构，还能保证我们表达的思想重点突出、逻辑清晰、层次分明、简单易懂。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/d51fedc9c2464b15bb39e17567914aa7~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=SQgIPrHifFkcsO3ILoXqcAX9f9U%3D" alt=""></p>
+<hr>
+<h1 id="解决问题的逻辑"><a href="#解决问题的逻辑" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:解决问题的逻辑" class="headings">解决问题的逻辑</a></h1>
+<p><strong>写作是自上而下的表达，解决问题是自下而上的思考</strong>。金字塔本身就是从问题开始，是你先发现读者头脑中已存在的问题，然后围绕这个问题向读者表达自己的观点，而这个问题的答案就是你所表达的中心思想。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/1fff8c1f23824ed49916c8327c76b5c6~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=na52oewWzAOyHtQZsBLgKmOQ%2FtE%3D" alt=""></p>
+<p>也就是说，<strong>解决问题的过程其实就是在预先搭建金字塔</strong>。我们先界定问题，然后结构化分析问题，之后找到解决方案，最后将自己的观点组织成金字塔结构与他人交流。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/a83df42333174bbdbcb3aaec484f07ab~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=Qo9M49XybI%2FOdnS7H2zH9zqTEUo%3D" alt=""></p>
+<h2 id="界定问题"><a href="#界定问题" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:界定问题" class="headings">界定问题</a></h2>
+<p><strong>界定问题就是对问题定性，通过现象，发现问题所在，从而找到真正的问题</strong>。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/66597ce62cf143b089ed9fbe078c5fbc~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=DFVgaBge3wCzZzDaQSpszLoEkO4%3D" alt=""></p>
+<p>那问题是什么呢？<strong>问题是现实和期望之间的差距</strong>。如果你不清楚问题，通常可以采用序列分析法来界定问题。</p>
+<blockquote>
+<p><strong>1.有没有/是否可能有问题（或机会）？</strong></p>
+<ul>
+<li>判断是否存在问题，需要对比期望结果和非期望结果。如果期望结果低于非期望结果，则说明存在问题。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>2.问题出在哪里？</strong></p>
+<ul>
+<li>寻找问题的位置，需要从背景入手。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>3.为什么存在？</strong></p>
+<ul>
+<li>寻找问题的原因，寻找流程上或者结构中潜在的问题。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>4.我们能做什么？</strong></p>
+<ul>
+<li>其实就是根据问题，罗列可能的解决方案。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>5.我们应该做什么？</strong></p>
+<ul>
+<li>根据所有罗列的解决方案，选择一个最适合的方案去执行。</li>
+</ul>
+</blockquote>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/3173c6e7cf9147bf91638293074d33ba~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=90ialGt4xofMEeNYAQ6FAC03xtA%3D" alt=""></p>
+<p><strong>界定问题的六个具体步骤:</strong></p>
+<ul>
+<li>1.设想问题产生的领域。</li>
+<li>2.说明什么事情的发生打乱了该领域的稳定（困扰/困惑）。</li>
+<li>3.确定非期望结果（现状 R1）。</li>
+<li>4.确定期望结果（目标 R2）。</li>
+<li>5.确定是否已经采取了解决问题的行动。</li>
+<li>6.确定分析所要回答的疑问。</li>
+</ul>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/08c9b55386a34411b0329d52dd5e4041~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=ub688KqJGLAIkZk%2FnTGPTotbaL8%3D" alt=""></p>
+<h2 id="结构化分析问题"><a href="#结构化分析问题" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:结构化分析问题" class="headings">结构化分析问题</a></h2>
+<p>界定问题是解决问题的第一步，但真正关键的是分析问题，只有经过详细分析后，我们才能找到问题的解决方案。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/26f43aa82f524bf685deaec748955d83~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=%2Bv62fZtd82sIKxa5TVZTrBfmuUs%3D" alt=""></p>
+<p><strong>分析问题的标准流程是：</strong></p>
+<p><strong>收集信息——描述发现——得出结论——提出方案。</strong></p>
+<p><strong>为了有效地找到结论和行动方案，分析人员必须有意识、有条理地去收集事实，得出符合逻辑的发现</strong>。</p>
+<p>比较高效的方法是先建立诊断框架和逻辑树，用来分析和引导思维。这样不仅能提高解决问题的效率，还简化了构建成金字塔结构的工作。</p>
+<blockquote>
+<p><strong>结构化分析问题的五个步骤</strong>：</p>
+<p>**1.从信息资料入手 **</p>
+<ul>
+<li><strong>强迫自己思考产生问题的各种可能原因，然后重点收集资料，以证明是这些原因或不是这些原因</strong>。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>2.设计诊断框架</strong></p>
+<ul>
+<li><strong>使用诊断框架设想客户产生问题的领域的状况</strong>。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>3.使用诊断框架</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>4.建立逻辑树</strong></p>
+<ul>
+<li><strong>使用逻辑树可以从逻辑上找出解决问题的可能的方案。</strong></li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>5.是非问题分析</strong></p>
+</blockquote>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/ff37ecc0120d44e68fe96ff876cdb5b2~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=lva9Um9OG2V%2B9uaCiAaK9zUdDMk%3D" alt=""></p>
+<p>解决问题的逻辑本质是利用金字塔思维去发现问题、分析问题、解决问题，使我们面对问题时不至于盲目、混乱、不知所措，同时也是在为我们搭建金字塔结构做准备。</p>
+<hr>
+<h1 id="表达的逻辑"><a href="#表达的逻辑" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:表达的逻辑" class="headings">表达的逻辑</a></h1>
+<p>学习金字塔思维就是为了提升我们沟通表达的能力，让我们在沟通表达中观点鲜明、重点突出、逻辑清晰、层次分明、简单易懂，同时让读者有兴趣，能理解，记得住。</p>
+<h2 id="书面表达"><a href="#书面表达" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:书面表达" class="headings">书面表达</a></h2>
+<p><strong>在阅读中，读者总是先看到逻辑关系的存在，然后才能理解它</strong>。为了让我们的思想能一目了然地呈现在读者的面前，我们必须让读者在阅读的最初30秒内就能了解文章的行文思路，理解整体的思维框架。</p>
+<p><strong>读者在阅读时，只能逐句理解作者表达的思想，而且总是在寻找一种能将所有摄入的信息联系起来的结构</strong>。</p>
+<p>因为我们大脑可利用的思维能力有限，一部分用于识别接收到的信息；另一部分用于找出信息之间的逻辑关系；剩下的部分用于理解和记忆所接收到的信息。（正如你现在阅读此文时的反应）</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/12a9a15d90554eeebc5aaeb71eda75fa~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=Sr4mzkwue9bZjMjc22EfAb5aZo8%3D" alt=""></p>
+<p><strong>如果不提前告诉读者某一组思想之间的逻辑关系，读者就会自动寻找，这势必会增加阅读的困难</strong>。因此，先向读者展示文章的整体思维框架，有助于读者理解与记忆。</p>
+<h3 id="上下文之间要有过渡"><a href="#上下文之间要有过渡" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:上下文之间要有过渡" class="headings">上下文之间要有过渡</a></h3>
+<p>当文章篇幅过长时，一定要注意：<strong>一组思想转换到另一组思想时，一定要写过渡性语句</strong>。</p>
+<p>第一免得读者感觉太突兀；第二能提前告知读者文章的思路，让其做好准备，以便于更快地理解和把握文章的思想。</p>
+<p>例如，<strong>上下文之间要有过渡</strong>。在写完序言后，进入文章正文部分就需要写一段文字，介绍每一关键句要点。</p>
+<p><strong>当文章篇幅较长时，也应该在每组主要思想开始或结束的地方做铺垫，让读者知道已经论述的和下一步将要论述的内容</strong>，同时保证两个章节之间的连接流畅且不机械——要把两个章节之间的主要思想连接在一起而不是做什么连在一起。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/3b430479b37345869c16830ca6ac0952~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=mSwDZhvsn5kkpEEfJFfVbGQXJnU%3D" alt=""></p>
+<p>在有些较长的文章中，需要在结尾处作出一总结，然后继续往下进行。因为，读者很容易由于文章篇幅太长，经常读了前面忘了后面，或读了后面忘了前面。</p>
+<p>总而言之，<strong>过渡性语句能强化理解和记忆</strong>，有助于提高读者的阅读效率。</p>
+<h3 id="标题反映思想分组"><a href="#标题反映思想分组" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:标题反映思想分组" class="headings">标题反映思想分组</a></h3>
+<p>文章的标题也很重要。<strong>标题是含有中心思想的主题句</strong>，它将文章分割成有序的部分，充当纲目，减少文章过渡性的段落，帮助读者预测和定位下文。</p>
+<p><strong>标题应当注意以下几点</strong>：</p>
+<ul>
+<li><strong>1.每一层级的标题不可能只有一个</strong>。</li>
+<li><strong>2.相同思想应该使用相同句型</strong>。</li>
+<li><strong>3.标题用词应该提炼思想精髓，避免使用&quot;缺乏思想&quot;的句子</strong>。</li>
+<li><strong>4.标题与正文分开考虑，标题为眼球而写，正文为大脑而写</strong>。</li>
+<li><strong>5.每组标题应该提前集中介绍</strong>。</li>
+<li><strong>6.不要滥用标题</strong>。</li>
+</ul>
+<p><strong>标题的作用是提示，而不是统领下文</strong>。我们应当在一组思想开始前，提前集中介绍该组中的标题。这样做是为了说明该组标题将解释或讨论的主要论点，以及将要提出的观点。</p>
+<p>如果略去这段介绍，读者可能会一头雾水，只有读到该节的末尾才弄明白你在本节想要证明的论点，而这时他可能已经记不起文章的开头部分了。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/97bcc733b4f940e09aa33b33d0818d32~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=LtlbR2qhIMwEAfl%2B%2FqDes3TzDbs%3D" alt=""></p>
+<p><strong>注意：千万不要紧接着文章题目写每一章的标题，也不要紧接着每一章的标题写每一节的标题，大标题下应集中介绍这一部分的主要内容</strong>。</p>
+<h2 id="ppt演示"><a href="#ppt演示" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:ppt演示" class="headings">PPT演示</a></h2>
+<p><strong>好的幻灯片总是尽可能直接简单地传递信息</strong>。PPT属于视觉演示，演示应图文并茂，叙述简洁。</p>
+<p><strong>PPT呈现应注意以下事项</strong>：</p>
+<ul>
+<li>1.<strong>每页只演示和说明一个论点</strong>。</li>
+<li>2.<strong>论点应使用陈述性语句，而不是标题性语句</strong>。</li>
+<li>3.<strong>文稿最好图文并茂</strong>。</li>
+<li>4.<strong>使用数字，字号应足够大</strong>。</li>
+<li>5.<strong>注意PPT的趣味性，比如颜色选择和布局等运用</strong>。</li>
+<li>6.<strong>文稿应呈现经过深思熟虑的故事梗概和剧本</strong>。</li>
+</ul>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/300e2f939f804465b6e347e2e205d654~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=cbnmSt0jllfv5TRaUIHFcTQaMWA%3D" alt=""></p>
+<p>学习金字塔思维是一个痛苦的过程，需要坚持的毅力，不是靠多读几本书，多看几遍文章就能豁然贯通的。根据721法则，<strong>成人学习的效果，70%来自实践和练习，20%来自于向他人学习，10%来自于书本与课堂培训</strong>。</p>
+<p>本文只是提供了一套关于金字塔思维的方法论。因此，<strong>读得懂是一回事，应用又是一回事，真正掌握又是另一回事</strong>！要想熟练运用这套方法，还得靠多练、多实践。</p>
+<p>从认知心理学到角度看，金字塔思维属于一项认知技能或心智技能，技能的掌握必须经过充分练习，才能形成稳定的神经连接和肌肉记忆，如此才算真正学会。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/cc7d1a98c38f4e18b86c95f1af942347~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=9tu84kdPAB8ZF5WZ%2FwRM%2BzDZnoE%3D" alt=""></p>
+<p>本人写下这篇文章，就是为了帮助自己理解和练习金字塔思维。因为写作不仅是检验我们是否理解所读内容的最简单方法，而且还是让我们思路变得井然有序的最好方法。</p>
+<p><strong>任何的表达，都是对个体内部理解的翻译</strong>。在翻译的过程中，由于语言对思维的作用，个体会把’意会‘转换为’言传‘，他的思想就得到了明晰、明确，他的理解就得到了升华。</p>
+<p>总而言之，<strong>写作是一种神经肌肉练习，能够让意识和潜意识融和</strong>，让我们的思路变得更清晰、连贯、准确。它是一种非常高效的学习方法。</p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/d6d8deafa50a43b7aa808bc35c81c481~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=9wOoobgW%2FRWLiekj67u6YTNrD9w%3D" alt=""></p>
+<p><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/ac9c2a6e5126450ebea9123331a0e463~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1736268645&amp;x-signature=rmnWPntDyGKk7laqDTUlP4H3Rs8%3D" alt=""></p>
+
+            </div>
+
+            
+
+
+        </article>
+
+        
+
+        
+    <div class="updated-badge-container">
+        <span title="Updated @ 2025-01-01 01:22:02 CST" style="cursor:help">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2025-01-01</text><text x="915" y="140" textLength="650" transform="scale(.1)">2025-01-01</text></g></svg>
+        </span></div>
+
+
+
+        
+
+
+        <div class="post-share">
+
+        
+            <div class="share-text">分享：</div>
+        
+
+        <div class="share-items">
+
+            
+
+            
+
+            
+                <div class="share-item linkedin">
+                    
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://icutaotao122.github.io/posts/%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E9%87%91%E5%AD%97%E5%A1%94%E6%80%9D%E7%BB%B4/&amp;title=%e5%ba%95%e5%b1%82%e9%80%bb%e8%be%91%ef%bc%9a%e9%87%91%e5%ad%97%e5%a1%94%e6%80%9d%e7%bb%b4&amp;summary=%e8%8a%b1%e5%8d%8a%e7%a7%92%e9%92%9f%e5%b0%b1%e7%9c%8b%e9%80%8f%e4%ba%8b%e7%89%a9%e6%9c%ac%e8%b4%a8%e7%9a%84%e4%ba%ba%ef%bc%8c%e5%92%8c%e8%8a%b1%e4%b8%80%e8%be%88%e5%ad%90%e9%83%bd%e7%9c%8b%e4%b8%8d%e6%b8%85%e4%ba%8b%e7%89%a9%e6%9c%ac%e8%b4%a8%e7%9a%84%e4%ba%ba%ef%bc%8c%e6%b3%a8%e5%ae%9a%e6%98%af%e6%88%aa%e7%84%b6%e4%b8%8d%e5%90%8c%e7%9a%84%e5%91%bd%e8%bf%90%e3%80%82%20%e4%ba%ba%e4%b8%8e%e4%ba%ba%e4%b9%8b%e9%97%b4%e7%9a%84%e5%b7%ae%e8%b7%9d%ef%bc%8c%e6%9c%ac%e8%b4%a8%e5%9c%a8%e4%ba%8e%e6%80%9d%e7%bb%b4%e3%80%82%e6%80%9d%e7%bb%b4%e5%86%b3%e5%ae%9a%e8%a1%8c%e4%b8%ba%ef%bc%8c%e8%a1%8c%e4%b8%ba%e5%86%b3%e5%ae%9a%e4%ba%ba%e7%94%9f%e3%80%82%e5%a6%82%e6%9e%9c%e4%bd%a0%e6%80%9d%e7%bb%b4%e6%b8%85%e6%99%b0%ef%bc%8c%e4%bd%a0%e5%b0%b1%e8%83%bd%e9%ab%98%e7%9e%bb%e8%bf%9c%e7%9e%a9%ef%bc%8c%e9%80%8f%e8%bf%87%e7%8e%b0%e8%b1%a1%e7%9c%8b%e5%88%b0%e6%9c%ac%e8%b4%a8%ef%bc%8c%e6%8a%8a%e6%8f%a1%e7%8e%b0%e5%9c%a8%e2%80%a6%e2%80%a6&amp;source=%e4%bb%8a%e6%97%a5%e4%ba%8b%ef%bc%8c%e4%bb%8a%e6%97%a5%e6%af%95" title="分享到「LinkedIn」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon linkedin-icon"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+                </div>
+            
+
+            
+
+            
+                <div class="share-item weibo">
+                    
+                    <a href="https://service.weibo.com/share/share.php?&amp;url=https://icutaotao122.github.io/posts/%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E9%87%91%E5%AD%97%E5%A1%94%E6%80%9D%E7%BB%B4/&amp;title=%e5%ba%95%e5%b1%82%e9%80%bb%e8%be%91%ef%bc%9a%e9%87%91%e5%ad%97%e5%a1%94%e6%80%9d%e7%bb%b4&amp;pic=https://p3-sign.toutiaoimg.com/tos-cn-i-axegupay5k/a89ca6917e004027966f3a11b3184819~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;amp;from=article.pc_detail&amp;amp;lk3s=953192f4&amp;amp;x-expires=1736268645&amp;amp;x-signature=LzqtgZbdTsSiZREUrMjJlm0VFrE%3D&amp;searchPic=false" title="分享到「新浪微博」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon weibo-icon"><path d="M407 177.6c7.6-24-13.4-46.8-37.4-41.7-22 4.8-28.8-28.1-7.1-32.8 50.1-10.9 92.3 37.1 76.5 84.8-6.8 21.2-38.8 10.8-32-10.3zM214.8 446.7C108.5 446.7 0 395.3 0 310.4c0-44.3 28-95.4 76.3-143.7C176 67 279.5 65.8 249.9 161c-4 13.1 12.3 5.7 12.3 6 79.5-33.6 140.5-16.8 114 51.4-3.7 9.4 1.1 10.9 8.3 13.1 135.7 42.3 34.8 215.2-169.7 215.2zm143.7-146.3c-5.4-55.7-78.5-94-163.4-85.7-84.8 8.6-148.8 60.3-143.4 116s78.5 94 163.4 85.7c84.8-8.6 148.8-60.3 143.4-116zM347.9 35.1c-25.9 5.6-16.8 43.7 8.3 38.3 72.3-15.2 134.8 52.8 111.7 124-7.4 24.2 29.1 37 37.4 12 31.9-99.8-55.1-195.9-157.4-174.3zm-78.5 311c-17.1 38.8-66.8 60-109.1 46.3-40.8-13.1-58-53.4-40.3-89.7 17.7-35.4 63.1-55.4 103.4-45.1 42 10.8 63.1 50.2 46 88.5zm-86.3-30c-12.9-5.4-30 .3-38 12.9-8.3 12.9-4.3 28 8.6 34 13.1 6 30.8.3 39.1-12.9 8-13.1 3.7-28.3-9.7-34zm32.6-13.4c-5.1-1.7-11.4.6-14.3 5.4-2.9 5.1-1.4 10.6 3.7 12.9 5.1 2 11.7-.3 14.6-5.4 2.8-5.2 1.1-10.9-4-12.9z"/></svg></a>
+                </div>
+            
+
+            
+
+            
+                <div class="share-item qq">
+                    
+                    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https://icutaotao122.github.io/posts/%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E9%87%91%E5%AD%97%E5%A1%94%E6%80%9D%E7%BB%B4/&amp;title=%e5%ba%95%e5%b1%82%e9%80%bb%e8%be%91%ef%bc%9a%e9%87%91%e5%ad%97%e5%a1%94%e6%80%9d%e7%bb%b4&amp;summary=%e8%8a%b1%e5%8d%8a%e7%a7%92%e9%92%9f%e5%b0%b1%e7%9c%8b%e9%80%8f%e4%ba%8b%e7%89%a9%e6%9c%ac%e8%b4%a8%e7%9a%84%e4%ba%ba%ef%bc%8c%e5%92%8c%e8%8a%b1%e4%b8%80%e8%be%88%e5%ad%90%e9%83%bd%e7%9c%8b%e4%b8%8d%e6%b8%85%e4%ba%8b%e7%89%a9%e6%9c%ac%e8%b4%a8%e7%9a%84%e4%ba%ba%ef%bc%8c%e6%b3%a8%e5%ae%9a%e6%98%af%e6%88%aa%e7%84%b6%e4%b8%8d%e5%90%8c%e7%9a%84%e5%91%bd%e8%bf%90%e3%80%82%20%e4%ba%ba%e4%b8%8e%e4%ba%ba%e4%b9%8b%e9%97%b4%e7%9a%84%e5%b7%ae%e8%b7%9d%ef%bc%8c%e6%9c%ac%e8%b4%a8%e5%9c%a8%e4%ba%8e%e6%80%9d%e7%bb%b4%e3%80%82%e6%80%9d%e7%bb%b4%e5%86%b3%e5%ae%9a%e8%a1%8c%e4%b8%ba%ef%bc%8c%e8%a1%8c%e4%b8%ba%e5%86%b3%e5%ae%9a%e4%ba%ba%e7%94%9f%e3%80%82%e5%a6%82%e6%9e%9c%e4%bd%a0%e6%80%9d%e7%bb%b4%e6%b8%85%e6%99%b0%ef%bc%8c%e4%bd%a0%e5%b0%b1%e8%83%bd%e9%ab%98%e7%9e%bb%e8%bf%9c%e7%9e%a9%ef%bc%8c%e9%80%8f%e8%bf%87%e7%8e%b0%e8%b1%a1%e7%9c%8b%e5%88%b0%e6%9c%ac%e8%b4%a8%ef%bc%8c%e6%8a%8a%e6%8f%a1%e7%8e%b0%e5%9c%a8%e2%80%a6%e2%80%a6&amp;pics=https://p3-sign.toutiaoimg.com/tos-cn-i-axegupay5k/a89ca6917e004027966f3a11b3184819~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;amp;from=article.pc_detail&amp;amp;lk3s=953192f4&amp;amp;x-expires=1736268645&amp;amp;x-signature=LzqtgZbdTsSiZREUrMjJlm0VFrE%3D&amp;site=%e4%bb%8a%e6%97%a5%e4%ba%8b%ef%bc%8c%e4%bb%8a%e6%97%a5%e6%af%95" title="分享到「QQ」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon qq-icon"><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"/></svg></a>
+                </div>
+            
+
+            
+
+            
+                <div class="share-item qrcode">
+                    <div class="qrcode-container" title="通过「二维码」"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon qrcode-icon"><path d="M0 224h192V32H0v192zM64 96h64v64H64V96zm192-64v192h192V32H256zm128 128h-64V96h64v64zM0 480h192V288H0v192zm64-128h64v64H64v-64zm352-64h32v128h-96v-32h-32v96h-64V288h96v32h64v-32zm0 160h32v32h-32v-32zm-64 0h32v32h-32v-32z"/></svg><div id="qrcode-img"></div>
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+
+<script>
+    const typeNumber = 0;
+    const errorCorrectionLevel = 'L';
+    const qr = qrcode(typeNumber, errorCorrectionLevel);
+    qr.addData('https:\/\/icutaotao122.github.io\/posts\/%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E9%87%91%E5%AD%97%E5%A1%94%E6%80%9D%E7%BB%B4\/');
+    qr.make();
+    document.getElementById('qrcode-img').innerHTML = qr.createImgTag();
+</script>
+
+                </div>
+            
+
+        </div>
+
+    </div>
+
+
+
+
+        
+    
+    
+        <div class="related-posts">
+            <h2 class="related-title">相关文章：<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon related-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"/></svg></h2>
+            <ul class="related-list">
+                
+                    <li class="related-item">
+                        <a href="/posts/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E4%B9%8B%E5%86%8D%E8%AF%BB/" class="related-link">&lt;金字塔原理&gt;之再读(10)</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E4%B9%8B%E5%90%88%E7%90%86%E5%8F%88%E4%B8%8D%E5%90%88%E7%90%86%E7%9A%84%E7%9B%AE%E5%BD%95/" class="related-link">&lt;金字塔原理&gt;之合理又不合理的目录(9)</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/%E8%BF%90%E7%94%A8%E9%87%91%E5%AD%97%E5%A1%94%E6%80%9D%E7%BB%B4%E9%98%85%E8%AF%BB/" class="related-link">运用金字塔思维阅读（8）</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/%E6%80%9D%E8%80%83%E6%98%AF%E4%B8%80%E9%97%A8%E8%89%BA%E6%9C%AF/" class="related-link">思考是一门艺术</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/%E7%AE%80%E5%8D%95%E9%80%BB%E8%BE%91%E4%B8%8D%E7%AE%80%E5%8D%95/" class="related-link">简单逻辑不简单</a>
+                    </li>
+                
+            </ul>
+        </div>
+    
+
+
+
+        
+    
+
+
+
+        
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+                <li class="post-nav-prev">
+                    <a href="/posts/think21/" rel="prev">&lt; 衰老是我们的宿命——&lt;最好的告别&gt;</a>
+                </li>
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/%E7%9B%AE%E6%A0%87%E8%83%BD%E6%8C%87%E5%AF%BC%E4%BA%BA%E7%94%9F/" rel="next">目标能指导人生 &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2023–2025&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;书书福福悦读</div>
+                <div class="busuanzi-site-uv-and-pv">
+                    <span id="busuanzi_container_site_uv">本站访客数&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon busuanzi-site-uv"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/></svg>&nbsp;<span id="busuanzi_value_site_uv"></span></span>&nbsp;|&nbsp;<span id="busuanzi_container_site_pv">本站访问量&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon busuanzi-site-pv"><path d="M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z"/></svg>&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+                </div>
+
+            
+    
+        <ul class="socials"><li class="socials-item">
+                    <a href="https://tomhutao.icu/" target="_blank" rel="external noopener" title="Email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon social-icon"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg></a>
+                </li><li class="socials-item">
+                    <a href="https://tomhutao.netlify.app//" target="_blank" rel="external noopener" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon social-icon"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                </li></ul>
+    
+
+
+
+            
+        </div>
+    </footer>
+
+
+        </div>
+        
+
+        
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    let imgNodes = document.querySelectorAll('div.post-body img');
+    imgNodes = Array.from(imgNodes).filter(node => node.parentNode.tagName !== "A");
+
+    mediumZoom(imgNodes, {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+    
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+
+
+    </body>
+</html>
